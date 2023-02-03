@@ -1,0 +1,105 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    overflow-x: auto
+}
+
+.login-body {
+    background: url(/img/lote2.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+
+.titulo {
+    color: #227C70;
+    text-align: center;
+    text-anchor: middle;
+}
+
+.iniciarsesion {
+    color: #3C6255;
+}
+
+.home {
+    background: url(/img/lote4.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+
+.body_layout {
+    background: url(/img/lote4.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+
+.dataTables_wrapper {
+    background-color: #FFFFFF;
+    border: medium;
+}
+
+.tabla-roles {
+    background-color: #FFFFFF;
+}
+
+.login-row {
+    margin-right: 0px;
+}
+
+.login-container {
+    padding-right: 0px;
+}
+
+.form-contacto {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-49%, -49%);
+}
+
+.form-contacto2 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-49%, -49%);
+}
+
+
+
+footer {
+    background-color: #EFEFEF;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}
+
+.img {
+    width: 100%;
+    padding-left: 20px;
+}
+
+@media screen and (max-width: 320px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}

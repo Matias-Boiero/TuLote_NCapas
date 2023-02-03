@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9074f0e8-c691-48dc-9f3c-2229c65065cd": {
+      "ProjectGuid": "9074f0e8-c691-48dc-9f3c-2229c65065cd",
+      "DisplayName": "TuLote.Aplicacion",
+      "ColorIndex": 0
+    },
+    "f124b18c-3d00-4182-a1d8-8db97167bdb6": {
+      "ProjectGuid": "f124b18c-3d00-4182-a1d8-8db97167bdb6",
+      "DisplayName": "TuLote.Repositorio",
+      "ColorIndex": 1
+    },
+    "9574a901-e567-447f-a740-dde8d46f2a69": {
+      "ProjectGuid": "9574a901-e567-447f-a740-dde8d46f2a69",
+      "DisplayName": "TuLote.AccesoDatos",
+      "ColorIndex": 2
+    },
+    "44d07baa-95bc-4c51-ad30-14d9c8bb6212": {
+      "ProjectGuid": "44d07baa-95bc-4c51-ad30-14d9c8bb6212",
+      "DisplayName": "TuLote.Abstracciones",
+      "ColorIndex": 3
+    },
+    "5bf34321-a316-4c7f-8b84-031fa442b47b": {
+      "ProjectGuid": "5bf34321-a316-4c7f-8b84-031fa442b47b",
+      "DisplayName": "TuLote.Entidades",
+      "ColorIndex": 4
+    },
+    "13e0975a-d10f-41a7-a3b0-4518c1ec8577": {
+      "ProjectGuid": "13e0975a-d10f-41a7-a3b0-4518c1ec8577",
+      "DisplayName": "TuLote.Servicios",
+      "ColorIndex": 5
+    },
+    "ccd165c2-0467-4a63-b0db-6ff78450e514": {
+      "ProjectGuid": "ccd165c2-0467-4a63-b0db-6ff78450e514",
+      "DisplayName": "TuLote",
+      "ColorIndex": 6
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 7
+}

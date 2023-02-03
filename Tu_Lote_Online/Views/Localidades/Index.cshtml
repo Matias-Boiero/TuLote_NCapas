@@ -1,0 +1,87 @@
+﻿@using TuLote.Entidades
+@model IEnumerable<TuLote.Entidades.DTOs.LocalidadDTO>
+
+    @{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var message = ViewBag.SuccessMsg;
+}
+
+<!-- Validacion para desplegar Mensaje despues del POST-->
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show col-3" role="alert">
+        @Html.Encode(TempData["success"])
+    </div>
+}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<h1 class="text-white">Localidades</h1>
+
+<div class="row">
+    <div class="col-8">
+        <a asp-action="Create" class="btn btn-success mb-4">Crear Localidad</a>
+    </div>
+</div>
+
+@if (Model.Count() > 0)
+{
+
+    <div class="table-responsive">
+        <div class="table">
+            <table class="table table-light table-striped table-bordered" id="MiTabla">
+                <thead>
+                    <tr class=col-md-12>
+                        <th scope="col" class=col-md-4>Localidad</th>
+                        <th scope="col" class=col-md-4>Municipio</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class=col-md-6>
+                            <td scope="col">@item.Nombre</td>
+                            <td scope="col">@item.Municipio.Nombre</td>
+                        </tr>
+
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+}
+else
+{
+    <p>No hay localidades para mostrar</p>
+}
+
+@section Scripts {
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+    $('#MiTabla').DataTable({
+    "language": {
+    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+    },
+    "aLengthMenu": [
+    [10,25, 50, 100, 200, -1],
+    [10,25, 50, 100, 200, "Todos"]
+    ]
+    });
+    });
+</script>
+}
+
+

@@ -1,0 +1,106 @@
+﻿@using TuLote.Entidades
+@model IEnumerable<TuLote.Entidades.DTOs.LoteDTO>
+
+    @{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var message = ViewBag.SuccessMsg;
+}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<h1 class="text-white">Lotes</h1>
+
+<div class="row">
+    <div class="col-8">
+        <a asp-action="Crear" class="btn btn-success mb-3">Crear Lote</a>
+        <a asp-action="LotesPDF" class="btn btn-danger mb-3">Exportar a PDF</a>
+    </div>
+
+</div>
+
+<!-- Validacion para desplegar Mensaje despues del POST-->
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show col-3" role="alert">
+        @Html.Encode(TempData["success"])
+    </div>
+}
+
+@if (Model.Count() > 0)
+{
+    <div class=table-responsive>
+        <div class="table login-row">
+            <div class="">
+                <table class="table table-light table-striped table-bordered col-lg-6" id="MiTabla">
+                    <thead>
+                        <tr class="col-md-12">
+                            <th scope="col" class="col-md-4 text-secondary fw-bolder text-center">Número de Lote</th>
+                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Metros</th>
+                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Etapa</th>
+                            <th scope="col" class="col-md-4 text-secondary fw-bolder text-center">Orientación</th>
+                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Precio</th>
+                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Disponible</th>
+                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Barrio</th>
+                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center"> Localidad</th>
+                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Fecha</th>
+                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Agente</th>
+                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="col-md-6 text-center">
+                                <td class="text-danger" scope="col">@item.Numero</td>
+                                <td scope="col">@item.Metros</td>
+                                <td scope="col">@item.Etapa</td>
+                                <td class="text-primary" scope="col">@item.Orientacion</td>
+                                <td scope="col">@item.Precio</td>
+                                <td scope="col">@item.Disponible</td>
+                                <td scope="col">@item.Barrio.Nombre</td>
+                                <td scope="col">@item.Barrio.Localidad.Nombre</td>
+                                <td scope="col">@item.FechaCreacion.ToString("dd/MM/yy")</td>
+                                <td class="text-success" scope="col">@item.Usuario.Alias</td>
+                                <td scope="col">
+                                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil text-primary"></i></a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-paperclip text-success"></i></a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-regular fa-trash-can text-danger"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <p>No hay categrías para mostrar</p>
+}
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    $('#MiTabla').DataTable({
+    "language": {
+    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+    },
+    "aLengthMenu": [
+    [10,25, 50, 100, 200, -1],
+    [10,25, 50, 100, 200, "Todos"]
+    ]
+    });
+    });
+</script>
+}
+

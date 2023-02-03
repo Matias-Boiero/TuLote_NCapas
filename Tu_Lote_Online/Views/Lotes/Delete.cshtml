@@ -1,0 +1,64 @@
+﻿@model TuLote.Entidades.Lote
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-white">Eliminar</h1>
+
+<h3 class="text-white text-bolder">¿Estás seguro de eliminar este lote?</h3>
+<div>
+
+    <hr />
+    <dl class="row bg-success col-md-6 text-white fw-bold">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Metros)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Metros)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Etapa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Etapa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orientacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orientacion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Disponible)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Disponible)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Barrio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Barrio.Nombre)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a class="row text-white ms-1 fw-bold" asp-action="Index">Regresar</a>
+    </form>
+</div>

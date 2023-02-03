@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH92rBYS/lECAuR1FfM40wwAAAAACAAAAAAAQZgAAAAEAACAAAABgPZSi3UUyGTG8v0jt4KkDqYgPsyQ+IWMS6H8RkpHYqAAAAAAOgAAAAAIAACAAAADSaUweXL0fzo29jlTqe8EjDt/9+qggp0shr7InEum9zYAAAADyIV2zkLa0bZnniTUgXK+FiLYbIXmzHXIPvm9prNN3xuaCtQ6Ka3/TYjZGLp0t2ZYUnvRqyElQGCodNIYXKSNgEtyzQLJi4gzkR3G7RrwSQgJ+u+Ot7sBo4LTJzCWX/2fqqCkItvvXRaArMB+viRnYRbd/Yw/RQVWgQQ4xfbpyhUAAAAClyIawPGTDrV2zA7Lbi5QvN5sD1G9fB/Seshfu+t5/I+mHkeW8kaII8W9Cem+4EtGLjkoF7zJSHGyfErc+NdzC</EncryptedPassword>
+    <History>False|2023-01-24T05:01:16.1832583Z;True|2023-01-23T23:49:08.9612843-03:00;True|2023-01-23T23:41:16.1808058-03:00;False|2023-01-23T23:36:38.8201797-03:00;True|2023-01-23T23:19:25.3852482-03:00;False|2023-01-23T23:17:41.3442961-03:00;True|2023-01-22T04:12:48.1859100-03:00;True|2023-01-22T04:07:30.3801720-03:00;False|2023-01-22T04:05:50.6272189-03:00;True|2023-01-22T02:54:46.0962548-03:00;True|2023-01-22T02:07:24.1383662-03:00;False|2023-01-22T02:05:08.8956828-03:00;True|2023-01-22T00:30:44.1814429-03:00;True|2023-01-22T00:10:32.7716632-03:00;False|2023-01-22T00:08:47.3172358-03:00;True|2023-01-21T23:46:13.9489323-03:00;False|2023-01-21T23:43:50.9024470-03:00;True|2023-01-21T23:07:32.8838983-03:00;False|2023-01-21T23:04:42.1785518-03:00;True|2023-01-21T22:50:20.6217561-03:00;True|2023-01-21T22:25:37.0064973-03:00;False|2023-01-21T22:20:58.4757775-03:00;True|2023-01-21T21:32:25.3809336-03:00;True|2023-01-21T20:55:46.5376286-03:00;True|2023-01-21T20:43:39.9238314-03:00;True|2023-01-21T18:58:32.6802794-03:00;True|2023-01-21T18:29:22.0691871-03:00;True|2023-01-21T18:03:12.2151574-03:00;True|2023-01-21T17:36:29.0513485-03:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:dbmatias.database.windows.net,1433%3bInitial Catalog=tulote-db%3bUser Id=Matias.Boiero%40dbmatias%3bPassword=Alvarito14</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="TuLote.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:dbmatias.database.windows.net,1433%3bInitial Catalog=tulote-db%3bUser Id=Matias.Boiero%40dbmatias%3bPassword=Alvarito14</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

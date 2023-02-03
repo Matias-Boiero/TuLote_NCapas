@@ -1,0 +1,66 @@
+﻿@model TuLote.Entidades.DTOs.ProvinciaCreacionDTO
+@using TuLote.Entidades
+@{
+    ViewData["Title"] = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var message = ViewBag.SuccessMsg;
+}
+@if (ViewBag.provincias != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show col-2 text-center" role="alert">
+        @Html.Encode( ViewBag.provincias)
+    </div>
+}
+<div class="row">
+    <form method="post" asp-action="Create" method="post" id="formulario" onsubmit="enviarFormulario(event)">
+        <div asp-validation-summary="ModelOnly" class="danger"></div>
+        <div class="Row">
+
+            <h3 class="text-start  fw-bolder text-white">Crear Provincia</h3>
+
+            <div class="col-md-4 mb-3">
+                @*<label asp-for="Nombre" class="control-label"></label>*@
+                <select onchange="ddl_change_func(this);" asp-for="Id" class="form-control"
+                        asp-items="ViewBag.listaProvincias">
+                    <option value="">-- Seleccionar Provincia --</option>
+                </select>
+                <span asp-validation-for="Nombre" class="text-white fw-bolder"></span>
+                <input id="selected_val" type="hidden" name="Nombre" value="" />
+            </div>
+
+            <button type="submit" class="btn btn-success">Crear</button>
+            <a class="btn btn-primary" asp-action="Index">Regresar</a>
+        </div>
+    </form>
+</div>
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+@section Scripts{
+<script src="~/scripts/jquery.js"></script>
+<script src="~/scripts/jquery.validate.js"></script>
+<script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+
+        }
+
+<script>
+    function ddl_change_func(el) {
+        //code logic here...
+        //set value of hidden field with selected option text
+        var ename = $(el).find("option:selected").text();
+        $("#selected_val").val(ename);
+    }
+     //function enviarFormulario(e){
+     //   event.preventDefault();
+     //  swal({
+     //    title: "Bien!",
+     //    text: "Has creado el registro con éxito!",
+     //    icon: "success",
+     //   }).then((resultado)=>{
+     //   const formulario= document.getElementById("formulario");
+     //   formulario.submit();
+     //   })
+     //}
+</script>

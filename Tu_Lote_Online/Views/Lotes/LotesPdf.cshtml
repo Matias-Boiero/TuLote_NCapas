@@ -1,0 +1,83 @@
+﻿@using TuLote.Entidades
+@model IEnumerable<Lote>
+
+@{
+    ViewData["Title"] = "LotesPDF";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lotes-PDF</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="col-sm-4">
+        <img src="~/img/logo.png" />
+    </div>
+
+    <h2 class="mt-2 text-center fw-bolder">Listado de Lotes</h2>
+    </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Numero)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Metros)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Etapa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Orientacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Barrio.Nombre)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Metros)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Etapa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Orientacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Barrio.Nombre)
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</body>
+</html>

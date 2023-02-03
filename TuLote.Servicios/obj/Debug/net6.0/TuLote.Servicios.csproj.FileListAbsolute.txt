@@ -1,0 +1,17 @@
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\bin\Debug\net6.0\TuLote.Servicios.deps.json
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\bin\Debug\net6.0\TuLote.Servicios.dll
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\bin\Debug\net6.0\ref\TuLote.Servicios.dll
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\bin\Debug\net6.0\TuLote.Servicios.pdb
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\obj\Debug\net6.0\TuLote.Servicios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\obj\Debug\net6.0\TuLote.Servicios.AssemblyInfoInputs.cache
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\obj\Debug\net6.0\TuLote.Servicios.AssemblyInfo.cs
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\obj\Debug\net6.0\TuLote.Servicios.csproj.CoreCompileInputs.cache
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\obj\Debug\net6.0\TuLote.Servicios.dll
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\obj\Debug\net6.0\ref\TuLote.Servicios.dll
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\obj\Debug\net6.0\TuLote.Servicios.pdb
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\obj\Debug\net6.0\TuLote.Servicios.csproj.AssemblyReference.cache
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\bin\Debug\net6.0\TuLote.Abstracciones.dll
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\bin\Debug\net6.0\TuLote.Entidades.dll
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\bin\Debug\net6.0\TuLote.Entidades.pdb
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\bin\Debug\net6.0\TuLote.Abstracciones.pdb
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Servicios\obj\Debug\net6.0\TuLote.Servicios.csproj.CopyComplete

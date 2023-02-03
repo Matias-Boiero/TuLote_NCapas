@@ -1,0 +1,113 @@
+﻿@model TuLote.Entidades.Municipio
+
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var message = ViewBag.SuccessMsg;
+}
+@if (ViewBag.municipios != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show col-2 text-center" role="alert">
+        @Html.Encode( ViewBag.municipios)
+    </div>
+}
+<h1 class="text-white">Crear</h1>
+
+<h4 class="text-warning">Municipio</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post" id="formulario" onsubmit="enviarFormulario(event)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <select class="form-control mb-2" onchange="ddl_change_func2(this);" id="provinciaId" asp-for="Provincia.Id"
+                        name="ProvinciasList" asp-items="@(new SelectList(ViewBag.Provincias,"Id","Nombre"))">
+                    <option value="">-- Seleccionar Provincia --</option>
+                </select>
+                <input id="selected_val2" type="hidden" name="Provincia_Id" value="" />
+                <span asp-validation-for="Provincia_Id" class="text-white fw-bolder"></span>
+
+            </div>
+            <div class="form-group mb-2">
+
+                <select onchange="ddl_change_func(this,this);" class="form-control" id="MunicipioId" asp-for="Nombre"
+                        name="MunicipioList" asp-items="@(new SelectList(string.Empty,"Id","Nombre"))" />
+                <input id="selected_val" type="hidden" name="Nombre" value="" />
+                <input id="selected_val3" type="hidden" name="id" value="" />
+                <span asp-validation-for="Nombre" class="text-white fw-bolder"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" value="Crear" class="btn btn-success">Crear</button>
+
+            </div>
+        </form>
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+        @section Scripts{
+        <script src="~/scripts/jquery.js"></script>
+        <script src="~/scripts/jquery.validate.js"></script>
+        <script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+
+        }
+    </div>
+</div>
+
+<div>
+    <a class="text-white fw-bolder" asp-action="Index">Regresar</a>
+</div>
+
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+    $("#provinciaId").change(function(){
+        var url= '@Url.Content("~/")'+ "Municipios/GetMunicipiosById";
+
+        var ddlsource="#provinciaId";
+        $.getJSON(url,{idProvincia:$(ddlsource).val()},function(data){
+            var items='';
+            $("#MunicipioId").empty();
+            $.each(data,function(i,row)
+            {
+
+                items += "<option value='" + row.id+ "'>" + row.nombre +" </option>";
+
+            });
+            $("#MunicipioId").html(items);
+        })
+    })
+    })
+
+
+    function ddl_change_func(param1,param2) {
+        //code logic here...
+
+        //set value of hidden field with selected option text
+        var nombre = $(param1).find("option:selected").text();
+        $("#selected_val").val(nombre);
+
+         var id = $(param2).find("option:selected").val();
+         $("#selected_val3").val(id)
+
+    }
+
+    function ddl_change_func2(param1) {
+        //code logic here...
+
+        //set value of hidden field with selected option text
+        var IdProvincia = $(param1).find("option:selected").val();
+
+
+        $("#selected_val2").val(IdProvincia);
+    }
+</script>
+

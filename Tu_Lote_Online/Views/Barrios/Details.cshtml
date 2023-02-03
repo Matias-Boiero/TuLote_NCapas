@@ -1,0 +1,32 @@
+﻿@model TuLote.Entidades.Barrio
+
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-white">Detalle</h1>
+
+<div>
+    <h4 class="text-white">Barrio</h4>
+    <hr />
+    <dl class="row row bg-success col-md-6 text-white fw-bold">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Localidad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Localidad.Nombre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="text-white fs-6 fw-bolder btn btn-info" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a class="text-white fs-6 fw-bolder btn btn-warning" asp-action="Index">Regresar</a>
+</div>

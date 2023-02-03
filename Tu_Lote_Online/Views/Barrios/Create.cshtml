@@ -1,0 +1,113 @@
+﻿@model TuLote.Entidades.Barrio
+@*@inject TuLote.Models.Municipio Municipio*@
+
+<h1 class="text-white">Crear</h1>
+@{
+    string classAlerta = string.Empty;
+}
+@{
+    var message = ViewBag.SuccessMsg;
+}
+@if (ViewBag.barrio != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show col-2 text-center" role="alert">
+        @Html.Encode( ViewBag.barrio)
+    </div>
+}
+
+<h4 class="text-warning">Barrio</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post" id="formulario" onsubmit="enviarFormulario(event)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-2">
+                <input class="form-control " asp-for="Nombre" placeholder="--Ingrese el nombre del barrio--" />
+                <span asp-validation-for="Nombre" class="text-white fw-bolder"></span>
+            </div>
+            <div class="form-group">
+                <select onchange="ddl_change_func2(this);" class="form-control mb-2" id="MunicipioId" asp-for="Localidad.Municipio.Id"
+                        name="MunicipioList" asp-items="@(new SelectList(ViewBag.listaMunicipios,"Id","Nombre")) ">
+                    <option value="">-- Seleccionar Municipio --</option>
+                </select>
+                <input id="selected_val2" type="hidden" name="Municipio_id" value="" />
+                <input id="selected_val2" type="hidden" name="Provincia_Id" value="" />
+
+            </div>
+            <div class="form-group">
+                <select onchange="ddl_change_func(this,this);" class="form-control mb-2" asp-for="Localidad.Id" id="LocalidadId"
+                        name="LocalidadList" asp-items="@(new SelectList(string.Empty,"Id","Nombre"))" />
+                <input id="selected_val" type="hidden" name="Nombre" value="" />
+                <input id="selected_val3" type="hidden" name="Localidad_id" value="" />
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="text-white fw-bolder" asp-action="Index">Regresar</a>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+    $("#MunicipioId").change(function(){
+        var url= '@Url.Content("~/")'+ "Localidades/GetLocalidadesById";
+
+        var ddlsource="#MunicipioId";
+        $.getJSON(url,{idMunicipio:$(ddlsource).val()},function(data){
+            var items='';
+            $("#LocalidadId").empty();
+            $.each(data,function(i,row)
+            {
+
+                items += "<option value='" + row.id+ "'>" + row.nombre +" </option>";
+
+            });
+            $("#LocalidadId").html(items);
+        })
+    })
+    })
+
+
+    function ddl_change_func(param1,param2) {
+        //code logic here...
+
+        //set value of hidden field with selected option text
+        var nombre = $(param1).find("option:selected").text();
+        $("#selected_val").val(nombre);
+
+         var id = $(param2).find("option:selected").val();
+         $("#selected_val3").val(id)
+
+    }
+
+
+    function ddl_change_func2(param1) {
+        //code logic here...
+
+        //set value of hidden field with selected option text
+        var IdMun = $(param1).find("option:selected").val();
+
+
+        $("#selected_val2").val(IdMun);
+    }
+
+       //function enviarFormulario(e){
+       // event.preventDefault();
+       //swal({
+       //  title: "Bien!",
+       //  text: "Has creado el registro con éxito!",
+       //  icon: "success",
+       // }).then((resultado)=>{
+       // const formulario= document.getElementById("formulario");
+       // formulario.submit();
+       // })
+     //}
+
+</script>

@@ -1,0 +1,47 @@
+﻿@model TuLote.Models.ViewModel.LoginVM
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1 class="text-white text-center text-bold">Bienvenido a tu gestor de lotes Online</h1>
+<body class="login-body">
+    <div class="container ms-2">
+        <div class="row col-lg-3 col-md-6 col-9 m-6 col-xs-10  col-10 ms-1 form-contacto"
+             style="border-width: 1px; padding-bottom:15px; padding-top: 10px;border-radius: 20px; align-content">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-success text-center">Iniciar sesión</h2>
+                    <form asp-action="Login">
+                        <div asp-validation-summary="ModelOnly" class="text-dander"> </div>
+                        <div class="mb-3 form-group">
+                            @*<label asp-for="Email" class="form-label"></label>*@
+                            <input asp-for="Email" type="email" class="form-control" placeholder="--ejemplo@gmail.com--" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3 form-group">
+                            @*<label asp-for="Password" class="form-label"></label>*@
+                            <input asp-for="Password" class="form-control" placeholder="--Ingrese su clave--" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-check mb-3 form-group">
+                            <input type="checkbox" class="form-check-input" asp-for="Recuerdame">
+                            <label asp-for="Recuerdame"></label>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="d-grid gap-2 form-group">
+                            <button type="submit" asp-controller="Usuarios" class="btn btn-success">Ingresar</button>
+                            <a class="btn btn-warning" asp-action="Registro">Registrarse</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+
+

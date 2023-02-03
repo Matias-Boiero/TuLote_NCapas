@@ -1,0 +1,75 @@
+﻿@using TuLote.Enums
+@model TuLote.Entidades.Lote
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-white">Editar</h1>
+
+<h4 class="text-white">Lote</h4>
+<hr />
+<div class="row text-white fw-bolder fs-6">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Numero" class="control-label"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Metros" class="control-label"></label>
+                <input asp-for="Metros" class="form-control" />
+                <span asp-validation-for="Metros" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Etapa" class="control-label"></label>
+                <input asp-for="Etapa" class="form-control" />
+                <span asp-validation-for="Etapa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orientacion" class="mb-2" style="font-weight:bold;"></label>
+
+                @Html.DropDownList("Orientacion", Html.GetEnumSelectList<Orientacion.Orientaciones>(), "Seleccionar orientación", new { @class = "form-control" })
+                <span asp-validation-for="Orientacion" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Disponible" /> @Html.DisplayNameFor(model => model.Disponible)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Precio" class="control-label"></label>
+                <input asp-for="Precio" class="form-control" />
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label type="hidden" asp-for="Barrio_Id" class="control-label"></label>
+                <select type="hidden" asp-for="Barrio_Id" class="form-control" asp-items="ViewBag.Barrio_Id"></select>
+            </div>
+            <div class="form-group mt-2">
+                <label type="hidden" asp-for="FechaCreacion" class="control-lab=el"></label>
+                <input type="date" asp-for="FechaCreacion" class="control-label" datetime="20:00" />
+
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="Usuario.Alias" type="hidden" class="control-label"></label>
+                <input asp-for="Usuario.Alias" disabled class="form-control" />
+                <input type="hidden" asp-for="Usuario_Id" />
+                @*<select onchange="ddl_change_func(this,this);" type="hidden" asp-for="Usuario_Id" class="form-control" asp-items="ViewBag.Usuario"><option>--Selecciona tu Usuario--</option></select>*@
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary mt-2" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="text-white" asp-action="Index">Regresar</a>
+</div>
+
