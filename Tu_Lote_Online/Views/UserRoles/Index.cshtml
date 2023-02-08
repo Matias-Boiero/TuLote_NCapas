@@ -3,13 +3,13 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h1 class="text-white">Roles de Usuarios</h1>
+<h1 class="text-warning">Roles de Usuarios</h1>
 <div class="table-responsive">
     <div class="table">
         <table class="table table-striped tabla-roles" id="MyTable">
             <thead>
                 <tr>
-                    <th>Id Usuario</th>
+
                     <th>Email</th>
                     <th>Roles</th>
                     <th>Acción</th>
@@ -19,7 +19,7 @@
                 @foreach (var user in Model)
                 {
                     <tr>
-                        <td>@user.UserId</td>
+
                         <td>@user.Email</td>
                         <td>@string.Join(" , ", user.Roles.ToList())</td>
                         <td>

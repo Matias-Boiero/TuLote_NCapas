@@ -1,11 +1,12 @@
 {
   "dependencies": {
-    "secrets1": {
-      "type": "secrets"
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DelaultConnectionLote"
     },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:DefaultConnection"
+      "connectionId": "ConnectionStrings:DefaultConnectionLote"
     }
   }
 }

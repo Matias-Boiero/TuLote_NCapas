@@ -11,13 +11,18 @@ namespace TuLote.Entidades
         [Display(Name = "Número de lote")]
         public string Numero { get; set; }
         [Required(ErrorMessage = "Los metros cuadrados son requeridos")]
-        [Display(Name = "Metros cuadrados")]
+        [Display(Name = "Metros (m2)")]
         public string Metros { get; set; }
-        [Required(ErrorMessage = "La etapa es requerida")]
-        [Display(Name = "Etapa/Área")]
-        public string Etapa { get; set; }
-        [EnumDataType(typeof(Orientacion))]
-        public Orientacion Orientacion { get; set; }
+
+        [EnumDataType(typeof(Tipo))]
+        [Required(ErrorMessage = "La ubicación es requerida")]
+        [Display(Name = "Ubicación")]
+        public Tipo Tipo { get; set; }
+
+        [EnumDataType(typeof(Orientaciones))]
+        [Required(ErrorMessage = "La orientación es requerida")]
+        public Orientaciones Orientacion { get; set; }
+
         public bool Disponible { get; set; }
         [Required(ErrorMessage = "Por favor cargue el monto")]
         [Display(Name = "Precio")]
@@ -33,10 +38,9 @@ namespace TuLote.Entidades
         [ForeignKey("Usuario")]
         public string Usuario_Id { get; set; }
         public Usuario Usuario { get; set; }
-
     }
 
-    public enum Orientacion
+    public enum Orientaciones
     {
         [Display(Name = "NORTE")] N = 1,
         [Display(Name = "SUR")] S = 2,
@@ -44,6 +48,14 @@ namespace TuLote.Entidades
         [Display(Name = "NORESTE")] NE = 4,
         [Display(Name = "SUDESTE")] SE = 5,
         [Display(Name = "SUDOESTE")] SO = 6,
-
+    }
+    public enum Tipo
+    {
+        [Display(Name = "Interno")] Interno = 1,
+        [Display(Name = "Perimetral")] Perimetral = 2,
+        [Display(Name = "Laguna")] Laguna = 3,
+        [Display(Name = "Rio")] Rio = 4,
+        [Display(Name = "Bosque")] Bosque = 5,
+        [Display(Name = "Golf")] Golf = 6
     }
 }

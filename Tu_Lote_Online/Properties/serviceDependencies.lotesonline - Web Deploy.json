@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "appInsights1": {
+      "ignored": "true",
+      "suggestion": "true",
+      "type": "appInsights",
+      "connectionId": ""
+    },
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/dbmatias/databases/TuLoteOnlineDB",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DefaultConnectionLote"
+    }
+  }
+}

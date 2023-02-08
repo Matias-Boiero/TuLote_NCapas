@@ -5,49 +5,49 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-white">Detalle</h1>
+<h1 class="text-warning">Detalle</h1>
 
 <div>
-    <h4 class="text-white">Lote</h4>
+    <h4 class="text-warning">Lote</h4>
     <hr />
-    <dl class="row row bg-success col-md-6 text-white fw-bold">
-        <dt class="col-sm-2">
+    <dl class="row row bg-secondary col-md-6 text-white fw-bold">
+        <dt class="col-sm-2 text-warning">
             @Html.DisplayNameFor(model => model.Numero)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Numero)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 text-warning">
             @Html.DisplayNameFor(model => model.Metros)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Metros)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Etapa)
+        <dt class="col-sm-2 text-warning">
+            @Html.DisplayNameFor(model => model.Tipo)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Etapa)
+            @Html.DisplayFor(model => model.Tipo)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 text-warning">
             @Html.DisplayNameFor(model => model.Orientacion)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Orientacion)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 text-warning">
             @Html.DisplayNameFor(model => model.Disponible)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Disponible)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 text-warning">
             @Html.DisplayNameFor(model => model.Precio)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Precio)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 text-warning">
             @Html.DisplayNameFor(model => model.Barrio.Nombre)
         </dt>
         <dd class="col-sm-10">
@@ -57,7 +57,7 @@
 </div>
 <div>
     <
-    <a class="text-white fs-6 fw-bolder btn btn-info" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a class="text-white fs-6 fw-bolder btn btn-secondary" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
     <a class="text-white fs-6 fw-bolder btn btn-warning" asp-action="Index">Regresar</a>
 </div>
 

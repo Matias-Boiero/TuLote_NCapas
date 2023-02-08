@@ -5,6 +5,7 @@
 		<Nullable>disable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UserSecretsId>a0ec5c86-a5c4-4256-b078-1847c0e20fac</UserSecretsId>
+		<ApplicationInsightsResourceId>/subscriptions/2d8374c5-92e2-434a-9936-770b59be92d1/resourceGroups/DefaultResourceGroup-CQ/providers/microsoft.insights/components/TuLote</ApplicationInsightsResourceId>
 	</PropertyGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
@@ -21,26 +22,33 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Content Remove="wwwroot\Rotativa\Windows\wkhtmltoimage.exe" />
+	  <Content Remove="wwwroot\Rotativa\Windows\wkhtmltopdf.exe" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Folder Include="wwwroot\img\" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Include="wwwroot\Rotativa\Windows\wkhtmltoimage.exe">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Include="wwwroot\Rotativa\Windows\wkhtmltopdf.exe">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+	  <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
+	  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\TuLote.Aplicacion\TuLote.Aplicacion.csproj" />
 		<ProjectReference Include="..\TuLote.Entidades\TuLote.Entidades.csproj" />
 		<ProjectReference Include="..\TuLote.Servicios\TuLote.Servicios.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Update="Rotativa\Windows\wkhtmltoimage.exe">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
-		<None Update="Rotativa\Windows\wkhtmltopdf.exe">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
 	</ItemGroup>
 
 </Project>

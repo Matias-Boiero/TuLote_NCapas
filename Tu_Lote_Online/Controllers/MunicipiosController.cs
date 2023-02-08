@@ -47,14 +47,14 @@ namespace TuLote.Controllers
         public async Task<IActionResult> Create(MunicipioCreacionDTO municipioCreacion)
         {
             var municipiosActuales = _aplicacion.GetAll(b => b.Municipios);
-            ViewBag.municipios = "Ya se encuentra el registro";
+            ViewBag.municipios = "Registro existente";
             var municipio = _mapper.Map<Municipio>(municipioCreacion);
             if (ModelState.IsValid)
             {
                 if (!municipiosActuales.Any(o => o.Nombre == municipioCreacion.Nombre))
                 {
                     await _aplicacion.Add(municipio);
-                    TempData["success"] = "Registro Creado correctamente.";
+                    TempData["success"] = "Registro creado correctamente.";
                     return RedirectToAction(nameof(Index));
                 }
 

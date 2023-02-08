@@ -1,7 +1,7 @@
 ﻿@model TuLote.Entidades.Barrio
-@*@inject TuLote.Models.Municipio Municipio*@
 
-<h1 class="text-white">Crear</h1>
+
+<h1 class="text-warning">Crear</h1>
 @{
     string classAlerta = string.Empty;
 }
@@ -10,7 +10,7 @@
 }
 @if (ViewBag.barrio != null)
 {
-    <div class="alert alert-danger alert-dismissible fade show col-2 text-center" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show col-md-4 text-center" role="alert">
         @Html.Encode( ViewBag.barrio)
     </div>
 }

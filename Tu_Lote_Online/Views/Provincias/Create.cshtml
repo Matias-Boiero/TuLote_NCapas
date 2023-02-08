@@ -9,7 +9,7 @@
 }
 @if (ViewBag.provincias != null)
 {
-    <div class="alert alert-danger alert-dismissible fade show col-2 text-center" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show col-md-4 text-center" role="alert">
         @Html.Encode( ViewBag.provincias)
     </div>
 }
@@ -18,7 +18,7 @@
         <div asp-validation-summary="ModelOnly" class="danger"></div>
         <div class="Row">
 
-            <h3 class="text-start  fw-bolder text-white">Crear Provincia</h3>
+            <h3 class="text-start  fw-bolder text-warning">Crear Provincia</h3>
 
             <div class="col-md-4 mb-3">
                 @*<label asp-for="Nombre" class="control-label"></label>*@

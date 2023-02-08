@@ -11,12 +11,12 @@
 }
 @if (TempData["success"] != null)
 {
-    <div class="alert alert-success alert-dismissible fade show col-3" role="alert">
+    <div class="alert alert-success alert-dismissible fade show col-md-4 text-center" role="alert">
         @Html.Encode(TempData["success"])
     </div>
 }
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-<h1 class="text-white">Provincias</h1>
+<h1 class="text-warning">Provincias</h1>
 
 <div class="row">
     <div class="col-8">

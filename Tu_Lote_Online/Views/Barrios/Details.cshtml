@@ -6,10 +6,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-white">Detalle</h1>
+<h1 class="text-warning">Detalle</h1>
 
 <div>
-    <h4 class="text-white">Barrio</h4>
+    <h4 class="text-warning">Barrio</h4>
     <hr />
     <dl class="row row bg-success col-md-6 text-white fw-bold">
         <dt class="col-sm-2">
@@ -27,6 +27,6 @@
     </dl>
 </div>
 <div>
-    <a class="text-white fs-6 fw-bolder btn btn-info" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a class="text-white fs-6 fw-bolder btn btn-secondary" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
     <a class="text-white fs-6 fw-bolder btn btn-warning" asp-action="Index">Regresar</a>
 </div>

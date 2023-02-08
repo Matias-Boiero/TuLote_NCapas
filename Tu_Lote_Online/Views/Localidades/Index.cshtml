@@ -13,12 +13,12 @@
 <!-- Validacion para desplegar Mensaje despues del POST-->
 @if (TempData["success"] != null)
 {
-    <div class="alert alert-success alert-dismissible fade show col-3" role="alert">
+    <div class="alert alert-success alert-dismissible fade show col-md-4 text-center" role="alert">
         @Html.Encode(TempData["success"])
     </div>
 }
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-<h1 class="text-white">Localidades</h1>
+<h1 class="text-warning">Localidades</h1>
 
 <div class="row">
     <div class="col-8">
@@ -58,7 +58,7 @@
 }
 else
 {
-    <p>No hay localidades para mostrar</p>
+    <p class="text-white">No hay localidades para mostrar</p>
 }
 
 @section Scripts {

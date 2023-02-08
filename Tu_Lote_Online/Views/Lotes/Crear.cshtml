@@ -10,7 +10,7 @@
     <div asp-validation-summary="ModelOnly" class="danger"></div>
     <div class="Row">
 
-        <h3 class="text-start text-white">Crear Lote</h3>
+        <h3 class="text-start text-warning">Crear Lote</h3>
 
         <div class="col-md-4 mb-3">
 
@@ -30,16 +30,10 @@
         </div>
 
         <div class="col-md-4 mb-3">
-
-            <input asp-for="Etapa" placeholder="Etapa" class="form-control">
-            <span asp-validation-for="Etapa" class="text-info fw-bolder"></span>
+            @Html.DropDownList("Orientacion", Html.GetEnumSelectList<Orientaciones>(), "--Seleccionar orientación--", new { @class = "form-control" })
         </div>
-
         <div class="col-md-4 mb-3">
-
-
-            @Html.DropDownList("Orientacion", Html.GetEnumSelectList<Orientacion.Orientaciones>(), "--Seleccionar orientación--", new { @class = "form-control" })
-
+            @Html.DropDownList("Tipo", Html.GetEnumSelectList<Tipo>(), "--Seleccionar Tipo/Ubicación--", new { @class = "form-control" })
         </div>
 
 

@@ -47,13 +47,13 @@ namespace TuLote.Controllers
             var localidadesActuales = _aplicacion.GetAll(b => b.localidades);
 
             Localidad localidad = _mapper.Map<Localidad>(localidadCreacion);
-            ViewBag.localidades = "Ya se encuentra el registro";
+            ViewBag.localidades = "Registro existente";
             if (ModelState.IsValid)
             {
                 if (!localidadesActuales.Any(o => o.Nombre == localidadCreacion.Nombre))
                 {
                     await _aplicacion.Add(localidad);
-                    TempData["success"] = "Registro Creado correctamente.";
+                    TempData["success"] = "Registro creado correctamente.";
                     return RedirectToAction(nameof(Index));
                 }
 

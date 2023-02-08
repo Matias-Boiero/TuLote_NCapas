@@ -43,7 +43,7 @@ namespace TuLote.Controllers
         public async Task<IActionResult> Create(ProvinciaCreacionDTO provinciaCreacion)
         {
 
-            ViewBag.provincias = "Ya se encuentra el registro";
+            ViewBag.provincias = "Registro existente";
             Provincia provincia = _mapper.Map<Provincia>(provinciaCreacion);//aquí se hace el mapeo
             var provinciasActuales = _aplicacion.GetAll(b => b.Provincias);
             if (ModelState.IsValid)
@@ -51,7 +51,7 @@ namespace TuLote.Controllers
                 if (!provinciasActuales.Any(o => o.Nombre == provinciaCreacion.Nombre))
                 {
                     await _aplicacion.Add(provincia);
-                    TempData["success"] = "Registro Creado correctamente.";
+                    TempData["success"] = "Registro creado correctamente.";
                     return RedirectToAction(nameof(Index));
                 }
             }

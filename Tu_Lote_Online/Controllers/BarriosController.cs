@@ -54,14 +54,14 @@ namespace TuLote.Controllers
         public async Task<IActionResult> Create(BarrioCreacionDTO barrioCreacion)
         {
             var barriosActuales = _aplicacion.GetAll();
-            ViewBag.barrio = "Ya se encuentra el registro";
+            ViewBag.barrio = "Registro exitente";
             Barrio barrio = _mapper.Map<Barrio>(barrioCreacion);
             if (ModelState.IsValid)
             {
                 if (!barriosActuales.Result.Any(o => o.Nombre == barrioCreacion.Nombre))
                 {
                     await _aplicacion.Add(barrio);
-                    TempData["success"] = "Registro Creado correctamente.";
+                    TempData["success"] = "Registro creado correctamente.";
                     return RedirectToAction(nameof(Index));
                 }
             }

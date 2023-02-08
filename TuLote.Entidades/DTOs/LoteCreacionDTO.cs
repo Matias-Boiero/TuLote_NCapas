@@ -11,11 +11,12 @@ namespace TuLote.Entidades.DTOs
         [Required(ErrorMessage = "Los metros cuadrados son requeridos")]
         [Display(Name = "Metros cuadrados")]
         public string Metros { get; set; }
-        [Required(ErrorMessage = "La etapa es requerida")]
-        [Display(Name = "Etapa/Área")]
-        public string Etapa { get; set; }
-        [EnumDataType(typeof(Orientacion))]
-        public Orientacion Orientacion { get; set; }
+        [EnumDataType(typeof(Tipo))]
+        [Required(ErrorMessage = "La ubicación es requerida")]
+        [Display(Name = "Tipo/Ubicación")]
+        public Tipo Tipo { get; set; }
+        [EnumDataType(typeof(Orientaciones))]
+        public Orientaciones Orientacion { get; set; }
         public bool Disponible { get; set; }
         [Required(ErrorMessage = "Por favor cargue el monto")]
         [Display(Name = "Precio en dolares")]

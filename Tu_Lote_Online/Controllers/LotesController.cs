@@ -59,7 +59,7 @@ namespace TuLote.Controllers
             if (ModelState.IsValid)
             {
                 await _aplicacion.Add(lote);
-                TempData["success"] = "Registro Creado correctamente.";
+                TempData["success"] = "Registro creado correctamente.";
                 return RedirectToAction("Index");
             }
             var barrios = await _barrio.GetAll();

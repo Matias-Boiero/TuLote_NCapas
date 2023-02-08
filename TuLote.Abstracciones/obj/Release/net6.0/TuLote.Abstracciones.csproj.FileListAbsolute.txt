@@ -1,0 +1,12 @@
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\bin\Release\net6.0\TuLote.Abstracciones.deps.json
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\bin\Release\net6.0\TuLote.Abstracciones.dll
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\bin\Release\net6.0\ref\TuLote.Abstracciones.dll
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\bin\Release\net6.0\TuLote.Abstracciones.pdb
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\obj\Release\net6.0\TuLote.Abstracciones.csproj.AssemblyReference.cache
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\obj\Release\net6.0\TuLote.Abstracciones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\obj\Release\net6.0\TuLote.Abstracciones.AssemblyInfoInputs.cache
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\obj\Release\net6.0\TuLote.Abstracciones.AssemblyInfo.cs
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\obj\Release\net6.0\TuLote.Abstracciones.csproj.CoreCompileInputs.cache
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\obj\Release\net6.0\TuLote.Abstracciones.dll
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\obj\Release\net6.0\ref\TuLote.Abstracciones.dll
+C:\Users\maty_\source\repos\TuLoteOnline\TuLote.Abstracciones\obj\Release\net6.0\TuLote.Abstracciones.pdb

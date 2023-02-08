@@ -6,13 +6,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-white">Crear</h1>
+<h1 class="text-warning">Crear</h1>
 @{
     var message = ViewBag.SuccessMsg;
 }
 @if (ViewBag.localidades != null)
 {
-    <div class="alert alert-danger alert-dismissible fade show col-2" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show col-md-4 text-center" role="alert">
         @Html.Encode( ViewBag.localidades)
     </div>
 }

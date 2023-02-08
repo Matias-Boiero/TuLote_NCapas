@@ -1,20 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace TuLote.Enums
 {
-    [Keyless]
-    public class Orientacion
+    public enum Orientaciones
     {
-        public enum Orientaciones
-        {
-            N,
-            S,
-            NO,
-            NE,
-            SE,
-            SO
-        }
+        [Display(Name = "NORTE")] N = 1,
+        [Display(Name = "SUR")] S = 2,
+        [Display(Name = "NOROESTE")] NO = 3,
+        [Display(Name = "NORESTE")] NE = 4,
+        [Display(Name = "SUDESTE")] SE = 5,
+        [Display(Name = "SUDOESTE")] SO = 6,
     }
-
-
 }

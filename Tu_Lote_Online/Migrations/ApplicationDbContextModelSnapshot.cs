@@ -174,7 +174,7 @@ namespace TuLote.Migrations
 
                     b.HasIndex("Localidad_Id");
 
-                    b.ToTable("Barrios", (string)null);
+                    b.ToTable("Barrios");
                 });
 
             modelBuilder.Entity("TuLote.Entidades.Localidad", b =>
@@ -198,7 +198,7 @@ namespace TuLote.Migrations
 
                     b.HasIndex("Municipio_Id");
 
-                    b.ToTable("Localidades", (string)null);
+                    b.ToTable("Localidades");
                 });
 
             modelBuilder.Entity("TuLote.Entidades.Lote", b =>
@@ -214,10 +214,6 @@ namespace TuLote.Migrations
 
                     b.Property<bool>("Disponible")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Etapa")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
@@ -236,6 +232,9 @@ namespace TuLote.Migrations
                     b.Property<int>("Precio")
                         .HasColumnType("int");
 
+                    b.Property<int>("Tipo")
+                        .HasColumnType("int");
+
                     b.Property<string>("Usuario_Id")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -246,7 +245,7 @@ namespace TuLote.Migrations
 
                     b.HasIndex("Usuario_Id");
 
-                    b.ToTable("Lotes", (string)null);
+                    b.ToTable("Lotes");
                 });
 
             modelBuilder.Entity("TuLote.Entidades.Municipio", b =>
@@ -270,7 +269,7 @@ namespace TuLote.Migrations
 
                     b.HasIndex("Provincia_Id");
 
-                    b.ToTable("Municipios", (string)null);
+                    b.ToTable("Municipios");
                 });
 
             modelBuilder.Entity("TuLote.Entidades.Provincia", b =>
@@ -289,29 +288,7 @@ namespace TuLote.Migrations
 
                     b.HasIndex("ProvinciaId");
 
-                    b.ToTable("Provincias", (string)null);
-                });
-
-            modelBuilder.Entity("TuLote.Entidades.Tipo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("Lote_Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Lote_Id");
-
-                    b.ToTable("Tipos", (string)null);
+                    b.ToTable("Provincias");
                 });
 
             modelBuilder.Entity("TuLote.Entidades.Usuario", b =>
@@ -510,17 +487,6 @@ namespace TuLote.Migrations
                     b.HasOne("TuLote.Entidades.Provincia", null)
                         .WithMany("Provincias")
                         .HasForeignKey("ProvinciaId");
-                });
-
-            modelBuilder.Entity("TuLote.Entidades.Tipo", b =>
-                {
-                    b.HasOne("TuLote.Entidades.Lote", "Lote")
-                        .WithMany()
-                        .HasForeignKey("Lote_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Lote");
                 });
 
             modelBuilder.Entity("TuLote.Entidades.Localidad", b =>

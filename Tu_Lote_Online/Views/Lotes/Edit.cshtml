@@ -1,4 +1,4 @@
-﻿@using TuLote.Enums
+﻿@using TuLote.Entidades
 @model TuLote.Entidades.Lote
 
 @{
@@ -6,9 +6,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-white">Editar</h1>
+<h1 class="text-warning">Editar</h1>
 
-<h4 class="text-white">Lote</h4>
+<h4 class="text-warning">Lote</h4>
 <hr />
 <div class="row text-white fw-bolder fs-6">
     <div class="col-md-4">
@@ -17,28 +17,29 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Numero" class="control-label"></label>
-                <input asp-for="Numero" class="form-control" />
+                <input asp-for="Numero" disabled class="form-control" />
                 <span asp-validation-for="Numero" class="text-danger"></span>
+                <input type="hidden" asp-for="Numero" />
+
             </div>
             <div class="form-group">
                 <label asp-for="Metros" class="control-label"></label>
                 <input asp-for="Metros" class="form-control" />
                 <span asp-validation-for="Metros" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Etapa" class="control-label"></label>
-                <input asp-for="Etapa" class="form-control" />
-                <span asp-validation-for="Etapa" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            <div>
                 <label asp-for="Orientacion" class="mb-2" style="font-weight:bold;"></label>
-
-                @Html.DropDownList("Orientacion", Html.GetEnumSelectList<Orientacion.Orientaciones>(), "Seleccionar orientación", new { @class = "form-control" })
+                @Html.DropDownList("Orientacion", Html.GetEnumSelectList<Orientaciones>(), "Seleccionar orientación", new { @class = "form-control" })
                 <span asp-validation-for="Orientacion" class="text-danger"></span>
             </div>
+            <div>
+                <label asp-for="Tipo" class="mb-2" style="font-weight:bold;"></label>
+                @Html.DropDownList("Tipo", Html.GetEnumSelectList<Tipo>(), "Seleccionar ubicación", new { @class = "form-control" })
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
             <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Disponible" /> @Html.DisplayNameFor(model => model.Disponible)
+                <label class="form-check-label mt-2">
+                    <input class="form-check-input mt-1 bg-success" asp-for="Disponible" /> @Html.DisplayNameFor(model => model.Disponible)
                 </label>
             </div>
             <div class="form-group">
@@ -52,18 +53,17 @@
             </div>
             <div class="form-group mt-2">
                 <label type="hidden" asp-for="FechaCreacion" class="control-lab=el"></label>
-                <input type="date" asp-for="FechaCreacion" class="control-label" datetime="20:00" />
-
+                <input type="date" asp-for="FechaCreacion" disabled class="control-label" datetime="20:00" />
+                <input type="hidden" asp-for="FechaCreacion" />
             </div>
 
             <div class="col-md-4 mb-3">
                 <label asp-for="Usuario.Alias" type="hidden" class="control-label"></label>
                 <input asp-for="Usuario.Alias" disabled class="form-control" />
                 <input type="hidden" asp-for="Usuario_Id" />
-                @*<select onchange="ddl_change_func(this,this);" type="hidden" asp-for="Usuario_Id" class="form-control" asp-items="ViewBag.Usuario"><option>--Selecciona tu Usuario--</option></select>*@
             </div>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary mt-2" />
+                <input type="submit" value="Guardar" class="btn btn-success mt-2" />
             </div>
         </form>
     </div>

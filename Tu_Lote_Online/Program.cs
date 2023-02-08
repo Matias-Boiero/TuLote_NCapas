@@ -15,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddDbContext<ApplicationDbContext>(op =>
-op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("TuLote")));
+op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionLote"), b => b.MigrationsAssembly("TuLote")));
 
 builder.Services.AddScoped(typeof(IAplicacion<>), typeof(Aplicacion<>));
 builder.Services.AddScoped(typeof(IRepositorio<>), typeof(Repositorio<>));
@@ -85,8 +85,9 @@ app.MapControllerRoute(
     pattern: "{controller=usuarios}/{action=login}/{id?}");
 
 IWebHostEnvironment env = app.Environment;
-Rotativa.AspNetCore.RotativaConfiguration.Setup(env.WebRootPath, "../Rotativa/Windows/");
+Rotativa.AspNetCore.RotativaConfiguration.Setup(env.WebRootPath, "../wwwroot/Rotativa/Windows/");
 app.Run();
+
 
 
 
