@@ -36,13 +36,15 @@
             <div class="form-group">
                 <select onchange="ddl_change_func(this,this);" class="form-control mb-2" asp-for="Nombre"
                         id="LocalidadId" name="LocalidadList" asp-items="@(new SelectList(string.Empty,"Id","Nombre"))" />
+                <option value="">-- Seleccionar Localidad --</option>
                 <input id="selected_val" type="hidden" name="Nombre" value="" />
                 <input id="selected_val3" type="hidden" name="id" value="" />
                 <span asp-validation-for="Nombre" class="text-white fw-bolder"></span>
             </div>
 
-            <div class="form-group">
-                <button type="submit" value="Crear" class="btn btn-success">Crear</button>
+            <div class="btn-group col-12">
+                <button type="submit" value="Crear" class="btn btn-success col-6 fw-bolder">Crear</button>
+                <a class="text-white fw-bolder col-6 btn btn-warning" asp-action="Index">Regresar</a>
             </div>
         </form>
         @{
@@ -58,7 +60,6 @@
 </div>
 
 <div>
-    <a class="text-white fw-bolder" asp-action="Index">Regresar</a>
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

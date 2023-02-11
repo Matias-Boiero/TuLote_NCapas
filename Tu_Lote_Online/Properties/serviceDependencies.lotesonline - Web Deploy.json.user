@@ -3,10 +3,6 @@
     "mssql1": {
       "restored": true,
       "restoreTime": "2023-02-03T19:47:55.3695403Z"
-    },
-    "appInsights1": {
-      "restored": true,
-      "restoreTime": "2023-02-03T21:46:24.0554278Z"
     }
   },
   "parameters": {

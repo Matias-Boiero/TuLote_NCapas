@@ -37,14 +37,15 @@
 
                 <select onchange="ddl_change_func(this,this);" class="form-control" id="MunicipioId" asp-for="Nombre"
                         name="MunicipioList" asp-items="@(new SelectList(string.Empty,"Id","Nombre"))" />
+                <option value="">-- Seleccionar Municipio --</option>
                 <input id="selected_val" type="hidden" name="Nombre" value="" />
                 <input id="selected_val3" type="hidden" name="id" value="" />
                 <span asp-validation-for="Nombre" class="text-white fw-bolder"></span>
             </div>
 
-            <div class="form-group">
-                <button type="submit" value="Crear" class="btn btn-success">Crear</button>
-
+            <div class="btn-group col-12">
+                <button type="submit" value="Crear" class="btn btn-success col-6">Crear</button>
+                <a class="btn btn-warning text-white fw-bolder col-6" asp-action="Index">Regresar</a>
             </div>
         </form>
         @{
@@ -59,9 +60,6 @@
     </div>
 </div>
 
-<div>
-    <a class="text-white fw-bolder" asp-action="Index">Regresar</a>
-</div>
 
 
 

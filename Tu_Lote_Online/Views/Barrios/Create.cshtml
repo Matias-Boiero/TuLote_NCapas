@@ -37,21 +37,21 @@
             <div class="form-group">
                 <select onchange="ddl_change_func(this,this);" class="form-control mb-2" asp-for="Localidad.Id" id="LocalidadId"
                         name="LocalidadList" asp-items="@(new SelectList(string.Empty,"Id","Nombre"))" />
+                <option value="">-- Seleccionar Localidad --</option>
                 <input id="selected_val" type="hidden" name="Nombre" value="" />
                 <input id="selected_val3" type="hidden" name="Localidad_id" value="" />
 
             </div>
 
-            <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-success" />
+            <div class="btn-group col-12">
+                <input type="submit" value="Crear" class="btn btn-success fw-bold col-6" />
+                <button class=" btn btn-warning text-white fw-bold col-6" asp-action="Index">Regresar</button>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a class="text-white fw-bolder" asp-action="Index">Regresar</a>
-</div>
+
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">

@@ -7,28 +7,31 @@
 
 <h1 class="text-warning">Eliminar</h1>
 
-<h3 class="text-warning text-bolder">¿Estás seguro que quieres eliminar este barrio?</h3>
-<div>
+<h3 class="text-white text-bolder">¿Estás seguro que quieres eliminar este barrio?</h3>
+<div class="col-md-6">
 
     <hr />
-    <dl class="row row bg-success col-md-6 text-white fw-bold">
-        <dt class="col-sm-2">
+    <dl class="text-white fw-bold">
+        <dt class="col-sm-2 ms-2 text-warning">
             @Html.DisplayNameFor(model => model.Nombre)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 ms-2">
             @Html.DisplayFor(model => model.Nombre)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 ms-2 text-warning">
             @Html.DisplayNameFor(model => model.Localidad)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 ms-2">
             @Html.DisplayFor(model => model.Localidad.Nombre)
         </dd>
     </dl>
-
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        <a class="text-white fs-6 fw-bolder btn btn-warning" asp-action="Index">Regresar</a>
-    </form>
+    <div class="col-12">
+        <form asp-action="Delete">
+            <div class="btn-group col-8">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Eliminar" class="btn btn-danger fw-bolder col-6 rounded-1" />
+                <a class="text-white fw-bolder btn btn-secondary col-6" asp-action="Index">Regresar</a>
+            </div>
+        </form>
+    </div>
 </div>

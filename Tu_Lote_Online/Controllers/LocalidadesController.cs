@@ -73,7 +73,7 @@ namespace TuLote.Controllers
             localidades.Insert(0, new Localidad
             {
                 Id = 0,
-                Nombre = "Por favor seleccione un municipio"
+                Nombre = "Por favor seleccione una localidad"
             });
 
             return Json(localidades);

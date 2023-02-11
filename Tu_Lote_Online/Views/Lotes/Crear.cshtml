@@ -8,58 +8,60 @@
 
 <form method="post" asp-action="Crear" method="post" id="formulario" onsubmit="enviarFormulario(event)">
     <div asp-validation-summary="ModelOnly" class="danger"></div>
-    <div class="Row">
+    <div class="Row col-md-4">
 
         <h3 class="text-start text-warning">Crear Lote</h3>
 
-        <div class="col-md-4 mb-3">
+        <div class="col-12 mb-3">
 
             <select asp-for="Barrio_Id" class="form-control" asp-items="ViewBag.Barrio_Id"><option>--Selecciona el barrio--</option></select>
         </div>
 
-        <div class="col-md-4 mb-3">
+        <div class="col-12 mb-3">
 
             <input asp-for="Numero" placeholder="Nro. de lote" class="form-control">
             <span asp-validation-for="Numero" class="text-info fw-bolder"></span>
         </div>
 
-        <div class="col-md-4 mb-3">
+        <div class="col-12 mb-3">
 
             <input asp-for="Metros" placeholder="Metros cuadrados" class="form-control">
             <span asp-validation-for="Metros" class="text-info fw-bolder"></span>
         </div>
 
-        <div class="col-md-4 mb-3">
+        <div class="col-12 mb-3">
             @Html.DropDownList("Orientacion", Html.GetEnumSelectList<Orientaciones>(), "--Seleccionar orientación--", new { @class = "form-control" })
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-12 mb-3">
             @Html.DropDownList("Tipo", Html.GetEnumSelectList<Tipo>(), "--Seleccionar Tipo/Ubicación--", new { @class = "form-control" })
         </div>
 
 
-        <div class="col-md-4 mb-3">
+        <div class="col-12 mb-3">
 
-            <p class="text-white fw-bolder"><input asp-for="Disponible" value="Activo" type="radio" value="True"> ACTIVO </p>
-            <p class="text-white fw-bolder"><input asp-for="Disponible" value="Inactivo" type="radio" value="False"> INACTIVO  </p>
+            <p class="text-white fw-bolder"><input asp-for="Disponible" class="bg-success" value="Activo" type="radio" value="True"> ACTIVO </p>
+            <p class="text-white fw-bolder"><input asp-for="Disponible" class="bg-success" value="Inactivo" type="radio" value="False"> INACTIVO  </p>
             <span asp-validation-for="Disponible" class="text-info fw-bolder"></span>
         </div>
 
-        <div class="col-md-4 mb-3">
+        <div class="col-12 mb-3">
 
             <input asp-for="Precio" placeholder="Precio en dolares" class="form-control">
             <span asp-validation-for="Precio" class="text-info fw-bolder"></span>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-2 col-12">
             <label type="hidden" asp-for="FechaCreacion" class="control-label text-white fw-bolder mb-2">Fecha de creación</label>
             <input type="date" asp-for="FechaCreacion" class="control-label" datetime="20:00" />
 
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-12 mb-3">
             <select onchange="ddl_change_func(this,this);" asp-for="Usuario_Id" class="form-control" asp-items="ViewBag.Usuario"><option>--Selecciona tu Usuario--</option></select>
-
         </div>
-        <button type="submit" class="btn btn-success">Crear</button>
-        <a class="btn btn-warning" asp-action="Index">Regresar</a>
+        <div class="col-12 btn-group">
+            <button type="submit" class="btn btn-success col-6">Crear</button>
+            <a class="btn btn-warning text-white col-6" asp-action="Index">Regresar</a>
+        </div>
+
     </div>
 </form>
 

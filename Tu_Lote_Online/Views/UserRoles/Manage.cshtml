@@ -7,13 +7,13 @@
 <form method="post">
     <div class="card">
         <div class="card-header">
-            <h2>Administrar roles de usuarios</h2>
-            Agergar/Eliminar Roles de Usuarios / @ViewBag.UserName.
+            <h2 class="text-warning">Administrar roles de usuarios</h2>
+            <span class="text-white">Agregar/Eliminar Roles de Usuarios /@ViewBag.UserName.</span>
         </div>
         <div class="card-body">
             @for (int i = 0; i < Model.Count; i++)
             {
-                <div class="form-check m-1">
+                <div class="form-check m-1 text-white">
                     <input type="hidden" asp-for="@Model[i].RoleId" />
                     <input type="hidden" asp-for="@Model[i].RoleName" />
                     <input asp-for="@Model[i].Selected" class="form-check-input" />
@@ -25,7 +25,7 @@
             <div asp-validation-summary="All" class="text-danger"></div>
         </div>
         <div class="card-footer">
-            <input type="submit" value="Actualizar" class="btn btn-primary"
+            <input type="submit" value="Actualizar" class="btn btn-success"
                    style="width:auto" />
             <a asp-action="Index" asp-route-id="@ViewBag.userId"
                class="btn btn-warning" style="width:auto">Cancelar</a>

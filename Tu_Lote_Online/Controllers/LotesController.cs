@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Rotativa.AspNetCore;
-using Rotativa.AspNetCore.Options;
 using TuLote.Abstracciones;
 using TuLote.Aplicacion;
 using TuLote.Entidades;
@@ -177,16 +175,7 @@ namespace TuLote.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> LotesPDF()
-        {
-            //return View(await _context.Lotes.ToListAsync());
-            var lista = await _aplicacion.GetAll(b => b.Barrio, l => l.Barrio.Localidad, u => u.Usuario).ToListAsync();
 
-            return new ViewAsPdf("LotesPDF", lista)
-            {
-                PageMargins = new Margins(5, 10, 12, 10)
-            };
-        }
     }
 }
 

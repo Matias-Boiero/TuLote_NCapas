@@ -5,20 +5,20 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
 @{
     var message = ViewBag.SuccessMsg;
 }
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-<h1 class="text-warning">Lotes</h1>
+<h1 class="text-warning">Lista de lotes</h1>
 
-<div class="row">
-    <div class="col-8">
-        <a asp-action="Crear" class="btn btn-success mb-3">Crear Lote</a>
-        <a asp-action="LotesPDF" class="btn btn-danger mb-3">Exportar a PDF</a>
-    </div>
 
+<div class="col-md-3 form-group d-grid">
+    <a asp-action="Crear" class="btn btn-success col-12 fw-bolder mb-3">Crear Lote</a>
 </div>
+
+
 
 <!-- Validacion para desplegar Mensaje despues del POST-->
 @if (TempData["success"] != null)
@@ -30,23 +30,38 @@
 
 @if (Model.Count() > 0)
 {
+    <div class="col-md-6">
+        <table border="0" cellspacing="5" cellpadding="5">
+            <tbody>
+                <tr class="col-6">
+                    <td class="text-warning">Precio Mínimo:</td>
+                    <td><input type="text" id="min" name="min"></td>
+                </tr>
+                <tr class="col-6">
+                    <td class="text-warning">Precio Máximo:</td>
+                    <td><input type="text" id="max" name="max"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     <div class=table-responsive>
         <div class="table login-row">
             <div class="">
-                <table class="table table-light table-striped table-bordered col-lg-6" id="MiTabla">
+                <table class="table table-light table-striped table-bordered col-lg-6 display" id="tabla">
                     <thead>
                         <tr class="col-md-12">
-                            <th scope="col" class="col-md-4 text-secondary fw-bolder text-center">Número de Lote</th>
-                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Metros</th>
+                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Número de Lote</th>
+                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Metros</th>
                             <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Tipo</th>
-                            <th scope="col" class="col-md-4 text-secondary fw-bolder text-center">Orientación</th>
+                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Orientación</th>
                             <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Precio</th>
                             <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Disponible</th>
-                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Barrio</th>
+                            <th scope="col" class="col-md-3 text-secondary fw-bolder text-center">Barrio</th>
                             <th scope="col" class="col-md-2 text-secondary fw-bolder text-center"> Localidad</th>
                             <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Fecha</th>
                             <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Agente</th>
-                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Acciones</th>
+                            <th scope="col" class="col-md-3 text-secondary fw-bolder text-center">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,21 +73,31 @@
                                 <td scope="col">@item.Tipo</td>
                                 <td class="text-primary" scope="col">@item.Orientacion</td>
                                 <td scope="col">@item.Precio</td>
-                                <td scope="col">@item.Disponible</td>
+                                @if (item.Disponible == true)
+                                {
+                                    <td scope="col"><i class="fa-solid fa-square-check fs-3 text-success"></i></td>
+                                }
+                                else
+                                {
+                                    <td scope="col"><i class="fa-solid fa-gavel alert-danger fs-3"></i></td>
+                                }
+                                @*<td scope="col">@item.Disponible</td>*@
                                 <td scope="col">@item.Barrio.Nombre</td>
                                 <td scope="col">@item.Barrio.Localidad.Nombre</td>
                                 <td scope="col">@item.FechaCreacion.ToString("dd/MM/yy")</td>
                                 <td class="text-success" scope="col">@item.Usuario.Alias</td>
                                 <td scope="col">
-                                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil text-primary"></i></a> |
-                                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-paperclip text-success"></i></a> |
-                                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-regular fa-trash-can text-danger"></i></a>
+                                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil text-primary "></i></a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-paperclip text-success "></i></a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-regular fa-trash-can text-danger "></i></a>
                                 </td>
                             </tr>
                         }
                     </tbody>
 
                 </table>
+
+
             </div>
         </div>
     </div>
@@ -82,25 +107,127 @@ else
     <p class="text--white">No hay lotes para mostrar</p>
 }
 
+
 @section Scripts {
     @{
     await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
-<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.1/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+
+@*<!-- para usar botones en datatables js -->
+    <script src="/datatables/buttons-2.3.4/js/datatables.buttons.js"></script>
+    <script src="/datatables/jszip-2.5.0/jszip.min.js"></script>
+    <script src="/datatables/pdfmake-0.1.36/pdfmake.js"></script>
+    <script src="/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="/datatables/buttons-2.3.4/js/buttons.html5.js"></script>*@
 
 <script type="text/javascript">
-    $(document).ready(function () {
-    $('#MiTabla').DataTable({
-    "language": {
-    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-    },
-    "aLengthMenu": [
-    [10,25, 50, 100, 200, -1],
-    [10,25, 50, 100, 200, "Todos"]
-    ]
+
+
+        $(document).ready(function() {
+        $('#tabla').DataTable({
+            language: {
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "zeroRecords": "No se encontraron resultados",
+                    "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sSearch": "Buscar:",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast":"Último",
+                        "sNext":"Siguiente",
+                        "sPrevious": "Anterior"
+                     },
+                     "sProcessing":"Procesando...",
+                },
+            //para usar los botones
+            responsive: "true",
+            dom: 'Bfrtilp',
+            buttons:[
+                {
+                    extend:    'excelHtml5',
+                    exportOptions: {
+                    columns: [ 0, 1, 2, 3,4,6,7]
+                },
+                    text:      '<i class="fas fa-file-excel"></i> ',
+                    filename: 'Lotes_Canadosa_Prop',
+                    titleAttr: 'Exportar a Excel',
+                    className: 'btn btn-success',
+                    title:"Lista de lotes - Candaosa Propiedades"
+                },
+                {
+                    extend:    'pdfHtml5',
+                    exportOptions: {
+                    columns: [ 0, 1, 2, 3,4,6,7]
+                },
+                    text:      '<i class="fas fa-file-pdf"></i> ',
+                    filename: 'Lotes_Canadosa_Prop',
+                     orientation: 'landscape', //portrait
+                    pageSize: 'A4', //A3 , A5 , A6 , legal , letter
+                    titleAttr: 'Exportar a PDF',
+                    className: 'btn btn-danger',
+                    title: "Lista de lotes -- Candaosa Propiedades - Tel: (011) 5612-3081 | +5491156123081 | info@candaosaprop.com"
+
+                },
+                {
+
+                    extend:    'print',
+                    exportOptions: {
+                    columns: [ 0, 1, 2, 3,4,6,7]
+                },
+                    text:      '<i class="fa fa-print"></i> ',
+                     filename: 'Lotes_Canadosa_Prop',
+                    titleAttr: 'Imprimir',
+                    className: 'btn btn-info',
+                    title:"Lista de lotes - Candaosa Propiedades"
+                },
+            ],
+
+        });
     });
-    });
+
+
+               /* Custom filtering function which will search data in column four between two values */
+                   $.fn.dataTable.ext.search.push(
+                       function( settings, data, dataIndex ) {
+                           var min = $('#min').val() * 1;
+                           var max = $('#max').val() * 1;
+                           var precio = parseFloat( data[4] ) || 0; // use data for the age column
+
+                           if ( ( min == '' && max == '' ) ||
+                                ( min == '' && precio <= max ) ||
+                                ( min <= precio && '' == max ) ||
+                                ( min <= precio && precio <= max ) )
+                           {
+                               return true;
+                           }
+                           return false;
+                       }
+                   );
+
+                   $(document).ready(function() {
+
+                       var table = $('#tabla').DataTable();
+
+                       // Event listener to the two range filtering inputs to redraw on input
+                       $('#min, #max').keyup( function() {
+                           table.draw();
+                       } );
+                   } );
 </script>
-}
+
+ }
+
+
 

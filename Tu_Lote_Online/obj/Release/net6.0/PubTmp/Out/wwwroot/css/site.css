@@ -19,12 +19,31 @@ body {
 }
 
 .login-body {
-    background: url(/img/lote2.png) no-repeat;
+    background: url(/img/candaosa.png);
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    /*  background-repeat: no-repeat;*/
     max-width: 100%;
 }
+
+.card {
+    background-color: #20262E;
+}
+
+/*.car-body {
+    height: 50px;
+    width: 400px;
+    margin: 0px auto;
+}*/
+
+.img-form {
+    width: 100px;
+    height: 100px;
+    align-content: center;
+    display: block;
+}
+
+
 
 .titulo {
     color: #227C70;
@@ -37,16 +56,17 @@ body {
 }
 
 .home {
-    background: url(/img/lote4.png) no-repeat;
+    background: url(/img/canadosa.png) /*no-repeat*/;
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
     max-width: 100%;
 }
 
 .body_layout {
-    background: url(/img/lote4.png) no-repeat;
-    background-position: center;
+    background-color: #3A3845;
+    /* background: url(/img/candaosa.png) no-repeat;*/
+    background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
     max-width: 100%;
@@ -71,22 +91,22 @@ body {
 
 .form-contacto {
     position: absolute;
-    top: 55%;
+    top: 57%;
     left: 50%;
-    transform: translate(-49%, -49%);
+    transform: translate(-46%, -47%);
 }
 
 .form-contacto2 {
     position: absolute;
-    top: 45%;
+    top: 60%;
     left: 50%;
-    transform: translate(-49%, -49%);
+    transform: translate(-51%, -51%);
 }
 
 
 
 footer {
-    background-color: #EFEFEF;
+    background-color: #2D2424;
     position: fixed;
     width: 100%;
     bottom: 0px;
@@ -95,6 +115,23 @@ footer {
 .img {
     width: 100%;
     padding-left: 20px;
+}
+
+.imagen-home {
+    width: 40%;
+    height: 20%;
+    align-content: center;
+    display: block;
+}
+
+
+.mostrar {
+    right: 5px;
+    top: 39px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 2px 10px;
+    background-color: #2D2424;
 }
 
 @media screen and (max-width: 320px) {

@@ -7,58 +7,62 @@
 
 <h1 class="text-warning">Eliminar</h1>
 
-<h4 class="text-warning text-bolder">¿Estás seguro de eliminarlo?</h4>
-<div>
-
-    <hr />
-    <dl class="row bg-secondary col-md-6 text-white fw-bold">
-        <dt class="col-sm-2 text-warning">
+<h4 class="text-white text-bolder">¿Estás seguro de eliminarlo?</h4>
+<hr />
+<div class=col-md-3>
+    <dl class="col-12 text-white fw-bold">
+        <dt class="col-12 text-secondary">
             @Html.DisplayNameFor(model => model.Numero)
         </dt>
-        <dd class="col-sm-10 ">
+        <dd class="col-12 ">
             @Html.DisplayFor(model => model.Numero)
         </dd>
-        <dt class="col-sm-2 text-warning">
+        <dt class="col-12 text-secondary">
             @Html.DisplayNameFor(model => model.Metros)
         </dt>
-        <dd class="col-sm-10 ">
+        <dd class="col-12 ">
             @Html.DisplayFor(model => model.Metros)
         </dd>
-        <dt class="col-sm-2 text-warning">
+        <dt class="col-12 text-secondary">
             @Html.DisplayNameFor(model => model.Tipo)
         </dt>
-        <dd class="col-sm-10 ">
+        <dd class="col-12 ">
             @Html.DisplayFor(model => model.Tipo)
         </dd>
-        <dt class="col-sm-2 text-warning">
+        <dt class="col-12 text-secondary">
             @Html.DisplayNameFor(model => model.Orientacion)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-12">
             @Html.DisplayFor(model => model.Orientacion)
         </dd>
-        <dt class="col-sm-2 text-warning">
+        <dt class="col-12 text-secondary">
             @Html.DisplayNameFor(model => model.Disponible)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-12">
             @Html.DisplayFor(model => model.Disponible)
         </dd>
-        <dt class="col-sm-2 text-warning">
+        <dt class="col-12 text-secondary">
             @Html.DisplayNameFor(model => model.Precio)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-12">
             @Html.DisplayFor(model => model.Precio)
         </dd>
-        <dt class="col-sm-2 text-warning">
+        <dt class="col-12 text-secondary">
             @Html.DisplayNameFor(model => model.Barrio)
         </dt>
-        <dd class="col-sm-10 ">
+        <dd class="col-12 ">
             @Html.DisplayFor(model => model.Barrio.Nombre)
         </dd>
     </dl>
 
     <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        <a class="row text-white ms-1 fw-bold" asp-action="Index">Regresar</a>
+        <div class="col-12 btn-group">
+            <input type="submit" value="Eliminar" class="btn btn-danger fw-bolder col-6" />
+            <a class="btn btn-secondary text-white fw-bold col-6 rounded-1" asp-action="Index">Regresar</a>
+            <input type="hidden" asp-for="Id" />
+        </div>
     </form>
+
 </div>
+
+

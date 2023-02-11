@@ -20,18 +20,20 @@
 
             <h3 class="text-start  fw-bolder text-warning">Crear Provincia</h3>
 
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 mb-3 text-center">
                 @*<label asp-for="Nombre" class="control-label"></label>*@
                 <select onchange="ddl_change_func(this);" asp-for="Id" class="form-control"
                         asp-items="ViewBag.listaProvincias">
-                    <option value="">-- Seleccionar Provincia --</option>
+                    <option value="" class="text-center">-- Seleccionar Provincia --</option>
                 </select>
                 <span asp-validation-for="Nombre" class="text-white fw-bolder"></span>
                 <input id="selected_val" type="hidden" name="Nombre" value="" />
-            </div>
 
-            <button type="submit" class="btn btn-success">Crear</button>
-            <a class="btn btn-primary" asp-action="Index">Regresar</a>
+                <div class="btn-group col-12">
+                    <button type="submit" class="btn btn-success fw-bolder col-6 mt-1">Crear</button>
+                    <a class="btn btn-warning fw-bolder col-6 mt-1 text-white" asp-action="Index">Regresar</a>
+                </div>
+            </div>
         </div>
     </form>
 </div>

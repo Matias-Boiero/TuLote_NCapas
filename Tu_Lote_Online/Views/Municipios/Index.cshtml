@@ -23,13 +23,13 @@
     </div>
 }
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-<h1 class="text-warning">Municipios</h1>
+<h1 class="text-warning">Lista de municipios</h1>
 
-<div class="row">
-    <div class="col-8">
-        <a asp-action="Create" class="btn btn-success mb-4">Crear Municipio</a>
-    </div>
+
+<div class="col-md-3">
+    <a asp-action="Create" class="btn btn-success col-12 mb-4 fw-bolder">Crear Municipio</a>
 </div>
+
 
 @if (Model.Count() > 0)
 {
