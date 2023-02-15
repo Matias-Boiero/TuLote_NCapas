@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <div class="container">
     <div class="form-contacto2 col-lg-3 col-md-6 col-9 m-6 col-xs-10  col-10 ms-1">
         <div class="card rounded-1">
@@ -15,35 +14,28 @@
                         <div class="col-md-12  text-center bg-black">
                             <div asp-validation-summary="ModelOnly" class="text-dander"> </div>
                             <div class="mb-1 form-group">
-                                @*<label asp-for="Nombre" class="form-label"></label>*@
                                 <input type="text" asp-for="Nombre" placeholder="--Nombre--" class="form-control text-center" />
                                 <span asp-validation-for="Nombre" class="text-danger"></span>
                             </div>
                             <div class="mb-1">
-                                @*<label asp-for="Apellido" class="form-label"></label>*@
                                 <input asp-for="Apellido" placeholder="--Apellido--" class="form-control text-center" />
                                 <span asp-validation-for="Apellido" class="text-danger"></span>
                             </div>
                             <div class="mb-1">
-                                @*<label asp-for="Alias" class="form-label"></label>*@
                                 <input asp-for="Alias" placeholder="--Alias--(Ej: MRB)" class="form-control text-center" />
                                 <span asp-validation-for="Alias" class="text-danger"></span>
                             </div>
                             <div class="mb-1 bg-black">
-                                @* <label asp-for="Email" class="form-label"></label>*@
                                 <input asp-for="Email" type="email" class="form-control text-center" placeholder="ejemplo@gmal.com" />
                                 <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                             <div class=" bg-black">
-                                @*<label asp-for="Contraseña" class="form-label"></label>*@
                                 <input asp-for="Contraseña" id="myInput" class="form-control text-center" placeholder="--Ingrese su clave--" />
                                 <button type="button" onclick="myFunction()" class="btn btn-dark mostrar">
                                     <i class="fas fa-eye"></i>
                                 </button>
                                 <span asp-validation-for="Contraseña" class="text-danger"></span>
                             </div>
-
-
                         </div>
                         <div class="text-center d-grid bg-black mt-1">
                             <button type="submit" class="btn btn-success btn-block fw-bold">Registrarse</button>
@@ -59,10 +51,7 @@
 
 
     @section Scripts{
-
-
     <script src="script.js"></script>
-
     }
 
     <script>

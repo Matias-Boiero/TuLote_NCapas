@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,7 @@ using TuLote.Servicios;
 
 namespace TuLote.Controllers
 {
-
+    [Authorize(Roles = "Administrador")]
     public class BarriosController : Controller
     {
 
@@ -166,9 +167,9 @@ namespace TuLote.Controllers
             if (barrio != null)
             {
                 _aplicacion.Remove(barrio);
-                return RedirectToAction(nameof(Index));
             }
             return RedirectToAction(nameof(Index));
         }
+
     }
 }

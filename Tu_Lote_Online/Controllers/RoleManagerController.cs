@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ControlTareas.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Administrador")]
     public class RoleManagerController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;

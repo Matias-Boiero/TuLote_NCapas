@@ -24,6 +24,12 @@
             @Html.DisplayFor(model => model.Metros)
         </dd>
         <dt class="col-12 text-secondary">
+            @Html.DisplayNameFor(model => model.Etapas)
+        </dt>
+        <dd class="col-12">
+            @Html.DisplayFor(model => model.Etapas)
+        </dd>
+        <dt class="col-12 text-secondary">
             @Html.DisplayNameFor(model => model.Tipo)
         </dt>
         <dd class="col-12 ">
@@ -57,8 +63,8 @@
 
     <form asp-action="Delete">
         <div class="col-12 btn-group">
-            <input type="submit" value="Eliminar" class="btn btn-danger fw-bolder col-6" />
-            <a class="btn btn-secondary text-white fw-bold col-6 rounded-1" asp-action="Index">Regresar</a>
+            <input type="submit" value="Eliminar" class="btn btn-danger fw-bolder col-6 rounded-1" />
+            <a class="btn btn-secondary text-white fw-bold col-6 rounded-1 ms-1" asp-action="Index">Regresar</a>
             <input type="hidden" asp-for="Id" />
         </div>
     </form>

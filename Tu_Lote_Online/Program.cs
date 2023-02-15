@@ -18,13 +18,14 @@ builder.Services.AddSession();
 //op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionLote"), b => b.MigrationsAssembly("TuLote")));
 
 builder.Services.AddDbContext<ApplicationDbContext>(op =>
-op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionSoome"), b => b.MigrationsAssembly("TuLote")));
+op.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnectionsoome"), b => b.MigrationsAssembly("tulote")));
 
 builder.Services.AddScoped(typeof(IAplicacion<>), typeof(Aplicacion<>));
 builder.Services.AddScoped(typeof(IRepositorio<>), typeof(Repositorio<>));
 builder.Services.AddScoped(typeof(IDbContext<>), typeof(DbContext<>));
 builder.Services.AddScoped(typeof(ILoteRepository<Lote>), typeof(LoteRepository));
 builder.Services.AddScoped(typeof(IBarrioRepositorio<Barrio>), typeof(BarrioRepository));
+
 builder.Services.AddScoped<IServicio_API_Provincia, Servicio_API_Provincia>();
 builder.Services.AddScoped<IServicio_API_Municipio, Servicio_API_Municipio>();
 builder.Services.AddScoped<IServicio_API_Localidad, Servicio_API_Localidad>();

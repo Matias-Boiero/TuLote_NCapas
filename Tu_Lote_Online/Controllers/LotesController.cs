@@ -32,7 +32,7 @@ namespace TuLote.Controllers
         {
             var lista = await _aplicacion.GetAll(b => b.Barrio, l => l.Barrio.Localidad, l => l.Usuario).ToListAsync();
             var listaLotes = _mapper.Map<List<LoteDTO>>(lista);//Aquí se hace el mapeo
-            //var listaLotes = _context.Lotes.Include(b => b.Barrio).Include(l => l.Barrio.Localidad).Include(l => l.Usuario).ToList();
+
             return View(listaLotes);
         }
 
@@ -171,6 +171,7 @@ namespace TuLote.Controllers
             if (lote != null)
             {
                 _aplicacion.Remove(lote);
+
             }
             return RedirectToAction(nameof(Index));
         }
@@ -178,4 +179,3 @@ namespace TuLote.Controllers
 
     }
 }
-

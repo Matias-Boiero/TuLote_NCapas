@@ -16,7 +16,6 @@ namespace TuLote.AccesoDatos
         public DbSet<Barrio> Barrios { get; set; }
         public DbSet<Lote> Lotes { get; set; }
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 

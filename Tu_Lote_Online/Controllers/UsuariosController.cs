@@ -88,7 +88,7 @@ namespace TuLote.Controllers
             }
             else
             {
-                ModelState.AddModelError(String.Empty, "Nombre de usuario o password incorrecto");
+                ModelState.AddModelError("Password", "Email o contraseña incorrectos");
                 return View(model);
             }
         }

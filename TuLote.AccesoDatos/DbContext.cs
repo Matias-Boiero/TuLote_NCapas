@@ -48,13 +48,13 @@ namespace TuLote.AccesoDatos
         public void Remove(T entity)
         {
             _context.Remove(entity);
-            _dbContext.SaveChangesAsync();
+            _dbContext.SaveChanges();
         }
 
         public async void RemoveRange(IEnumerable<T> entities)
         {
             _context.RemoveRange(entities);
-            await _dbContext.SaveChangesAsync();
+            _dbContext.SaveChanges();
         }
 
 

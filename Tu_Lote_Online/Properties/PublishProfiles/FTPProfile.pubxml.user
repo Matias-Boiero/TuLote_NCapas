@@ -8,14 +8,14 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/bXbDRvYmkGysVCFltOnYQAAAAACAAAAAAAQZgAAAAEAACAAAABspxyV6LWLq1DZxEvSHWH41/byYt6omWgPg/wkLm+UHgAAAAAOgAAAAAIAACAAAACr5fgYVH/jCfwgVNsRAWiR+hRFcGybBH8UcERWgQvonSAAAAAPe00RujGtrNjjwLEZ5+Bz3ZC2PhqOWFCjhcv99G2lN0AAAAC1rCQWdDKDVy+guN/ZkKXzWOGAgVhZWMW1/cOBOAj0xyi11GvLLo5W55Z6SwIR6hTr7TpfQMrvXiHrWX0d9AtC</EncryptedPassword>
     <_PublishTargetUrl>ftp://192.52.242.121/www.TuLoteOnline.somee.com</_PublishTargetUrl>
-    <History>True|2023-02-11T19:04:46.7551690Z;False|2023-02-11T03:44:39.5677620-03:00;False|2023-02-11T03:13:22.8101373-03:00;False|2023-02-11T02:50:33.8343239-03:00;False|2023-02-11T00:26:23.1552537-03:00;False|2023-02-10T21:21:43.5098860-03:00;</History>
+    <History>True|2023-02-15T00:09:54.4435747Z;True|2023-02-14T16:41:56.0540356-03:00;True|2023-02-14T15:54:08.7914195-03:00;False|2023-02-14T12:09:13.3152607-03:00;True|2023-02-14T02:11:48.0460421-03:00;True|2023-02-13T23:36:07.4033582-03:00;True|2023-02-13T22:37:57.5709739-03:00;True|2023-02-13T00:01:24.8559585-03:00;False|2023-02-12T23:01:12.5016452-03:00;True|2023-02-12T22:43:19.3492109-03:00;True|2023-02-12T01:25:31.0218240-03:00;True|2023-02-11T23:31:47.4891499-03:00;True|2023-02-11T21:51:57.7538808-03:00;True|2023-02-11T18:29:37.5754447-03:00;True|2023-02-11T16:04:46.7551690-03:00;False|2023-02-11T03:44:39.5677620-03:00;False|2023-02-11T03:13:22.8101373-03:00;False|2023-02-11T02:50:33.8343239-03:00;False|2023-02-11T00:26:23.1552537-03:00;False|2023-02-10T21:21:43.5098860-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
-      <publishTime>02/10/2023 20:23:12</publishTime>
+      <publishTime>02/13/2023 22:07:11</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>02/10/2023 20:28:57</publishTime>
+      <publishTime>02/13/2023 22:09:26</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>09/30/2022 06:45:38</publishTime>
@@ -318,10 +318,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/21/2022 14:32:20</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.JsonPatch.dll">
-      <publishTime>07/24/2017 21:48:04</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.Mvc.Razor.Extensions.dll">
-      <publishTime>10/30/2017 20:55:52</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.Razor.Language.dll">
       <publishTime>10/26/2021 18:51:08</publishTime>
@@ -384,22 +384,22 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>06/11/2018 07:53:22</publishTime>
     </File>
     <File Include="Microsoft.DotNet.PlatformAbstractions.dll">
-      <publishTime>10/16/2017 12:49:50</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.DotNet.Scaffolding.Shared.dll">
       <publishTime>12/12/2022 05:46:50</publishTime>
     </File>
     <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
-      <publishTime>11/14/2022 19:43:50</publishTime>
+      <publishTime>11/30/2022 10:18:36</publishTime>
     </File>
     <File Include="Microsoft.EntityFrameworkCore.dll">
-      <publishTime>11/14/2022 19:44:18</publishTime>
+      <publishTime>11/30/2022 10:18:54</publishTime>
     </File>
     <File Include="Microsoft.EntityFrameworkCore.Relational.dll">
-      <publishTime>11/14/2022 19:44:38</publishTime>
+      <publishTime>11/30/2022 10:19:06</publishTime>
     </File>
     <File Include="Microsoft.EntityFrameworkCore.SqlServer.dll">
-      <publishTime>11/14/2022 19:44:46</publishTime>
+      <publishTime>11/30/2022 10:19:14</publishTime>
     </File>
     <File Include="Microsoft.Extensions.Caching.Memory.dll">
       <publishTime>01/14/2022 16:54:16</publishTime>
@@ -408,7 +408,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/26/2022 14:42:22</publishTime>
     </File>
     <File Include="Microsoft.Extensions.DependencyModel.dll">
-      <publishTime>10/16/2017 12:49:52</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.Extensions.DiagnosticAdapter.dll">
       <publishTime>11/14/2016 17:41:28</publishTime>
@@ -474,7 +474,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>10/22/2021 20:40:24</publishTime>
     </File>
     <File Include="Newtonsoft.Json.Bson.dll">
-      <publishTime>08/28/2021 12:53:42</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Newtonsoft.Json.dll">
       <publishTime>11/23/2022 23:10:26</publishTime>
@@ -579,7 +579,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>10/14/2021 15:38:18</publishTime>
     </File>
     <File Include="Rotativa.AspNetCore.dll">
-      <publishTime>09/19/2021 12:21:08</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="ru/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
       <publishTime>10/14/2021 15:43:18</publishTime>
@@ -750,55 +750,55 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>02/03/2023 16:50:32</publishTime>
     </File>
     <File Include="TuLote.AccesoDatos.dll">
-      <publishTime>02/08/2023 04:44:04</publishTime>
+      <publishTime>02/14/2023 20:39:58</publishTime>
     </File>
     <File Include="TuLote.AccesoDatos.pdb">
-      <publishTime>02/08/2023 04:44:04</publishTime>
+      <publishTime>02/14/2023 20:39:58</publishTime>
     </File>
     <File Include="TuLote.Aplicacion.dll">
-      <publishTime>02/08/2023 04:44:05</publishTime>
+      <publishTime>02/14/2023 20:39:59</publishTime>
     </File>
     <File Include="TuLote.Aplicacion.pdb">
-      <publishTime>02/08/2023 04:44:05</publishTime>
+      <publishTime>02/14/2023 20:39:59</publishTime>
     </File>
     <File Include="TuLote.deps.json">
-      <publishTime>02/11/2023 15:28:26</publishTime>
+      <publishTime>02/14/2023 20:40:19</publishTime>
     </File>
     <File Include="TuLote.dll">
-      <publishTime>02/11/2023 15:28:23</publishTime>
+      <publishTime>02/14/2023 20:40:17</publishTime>
     </File>
     <File Include="TuLote.Entidades.dll">
-      <publishTime>02/08/2023 04:44:03</publishTime>
+      <publishTime>02/14/2023 20:39:57</publishTime>
     </File>
     <File Include="TuLote.Entidades.pdb">
-      <publishTime>02/08/2023 04:44:03</publishTime>
+      <publishTime>02/14/2023 20:39:57</publishTime>
     </File>
     <File Include="TuLote.exe">
-      <publishTime>02/11/2023 15:28:23</publishTime>
+      <publishTime>02/14/2023 20:40:17</publishTime>
     </File>
     <File Include="TuLote.pdb">
-      <publishTime>02/11/2023 15:28:22</publishTime>
+      <publishTime>02/14/2023 20:40:17</publishTime>
     </File>
     <File Include="TuLote.Repositorio.dll">
-      <publishTime>02/08/2023 04:44:05</publishTime>
+      <publishTime>02/14/2023 20:39:58</publishTime>
     </File>
     <File Include="TuLote.Repositorio.pdb">
-      <publishTime>02/08/2023 04:44:05</publishTime>
+      <publishTime>02/14/2023 20:39:58</publishTime>
     </File>
     <File Include="TuLote.runtimeconfig.json">
-      <publishTime>02/11/2023 02:53:01</publishTime>
+      <publishTime>02/13/2023 22:05:34</publishTime>
     </File>
     <File Include="TuLote.Servicios.dll">
-      <publishTime>02/08/2023 04:44:04</publishTime>
+      <publishTime>02/14/2023 20:39:58</publishTime>
     </File>
     <File Include="TuLote.Servicios.pdb">
-      <publishTime>02/08/2023 04:44:04</publishTime>
+      <publishTime>02/14/2023 20:39:58</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>02/11/2023 15:28:27</publishTime>
+      <publishTime>02/14/2023 20:40:19</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
-      <publishTime>02/11/2023 15:27:41</publishTime>
+      <publishTime>02/12/2023 00:23:41</publishTime>
     </File>
     <File Include="wwwroot/datatables/Buttons-2.3.4/css/buttons.bootstrap.css">
       <publishTime>02/03/2023 15:14:54</publishTime>

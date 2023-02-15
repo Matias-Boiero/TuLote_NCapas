@@ -10,7 +10,6 @@ namespace TuLote.Entidades.DTOs
         [Display(Name = "Provincia")]
         public string Nombre { get; set; }
         public List<Provincia> Provincias { get; set; }
-
         public ICollection<Municipio> Municipios { get; set; }
     }
 }

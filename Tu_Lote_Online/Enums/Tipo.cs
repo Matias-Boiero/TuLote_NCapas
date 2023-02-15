@@ -4,11 +4,14 @@ namespace TuLote.Enums
 {
     public enum Tipo
     {
-        [Display(Name = "Interno")] Interno = 1,
-        [Display(Name = "Perimetral")] Perimetral = 2,
-        [Display(Name = "Laguna")] Laguna = 3,
-        [Display(Name = "Rio")] Rio = 4,
-        [Display(Name = "Bosque")] Bosque = 5,
-        [Display(Name = "Golf")] Golf = 6
+        Interno = 1,
+        Perimetral = 2,
+        Laguna = 3,
+        Rio = 4,
+        Bosque = 5,
+        Golf = 6,
+        [Display(Name = "Espejo de agua")] Espejo_de_Agua = 7,
+        Abierto = 8,
+        Semicerrado = 9
     }
 }
