@@ -70,18 +70,18 @@ body {
 
 .dropdown-item:hover {
     /*Modifica lo que quieras*/
-    background: #F2F7A1;
-    color: white;
+    /* background: #BFACE2;*/
+    /*color:;*/
 }
 
 
 .dataTables_wrapper {
-    background-color: #F8F9D7;
+    background-color: #F0EEED;
     border: medium;
 }
 
 .tabla-roles {
-    background-color: #F8F9D7;
+    background-color: #FBFBFB;
 }
 
 .login-row {
@@ -94,14 +94,14 @@ body {
 
 .form-contacto {
     position: absolute;
-    top: 57%;
+    top: 54%;
     left: 50%;
     transform: translate(-46%, -47%);
 }
 
 .form-contacto2 {
     position: absolute;
-    top: 60%;
+    top: 54%;
     left: 50%;
     transform: translate(-51%, -51%);
 }

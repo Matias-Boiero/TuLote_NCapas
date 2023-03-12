@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="lotesonline" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="matiasboiero-002-site1" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\maty_\\source\\repos\\TuLoteOnline\\Tu_Lote_Online\\obj\\Release\\net6\.0\\win-x86\\PubTmp\\Out\\$" />
-  </parameter>
-  <parameter name="TuLote.AccesoDatos.ApplicationDbContext" description="" value="Data Source=tcp:dbmatias.database.windows.net,1433;Initial Catalog=TuLoteOnlineDB;User Id=Matias.Boiero@dbmatias;Password=Alvarito14" tags="dbfullsql">
-    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\maty_\\source\\repos\\TuLoteOnline\\Tu_Lote_Online\\obj\\Release\\net6\.0\\win-x86\\PubTmp\\EFSQLScripts\\TuLote\.AccesoDatos\.ApplicationDbContext\.sql$" />
   </parameter>
 </parameters>

@@ -18,7 +18,7 @@ builder.Services.AddSession();
 //op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionLote"), b => b.MigrationsAssembly("TuLote")));
 
 builder.Services.AddDbContext<ApplicationDbContext>(op =>
-op.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnectionsoome"), b => b.MigrationsAssembly("tulote")));
+op.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnectionSmartAsp"), b => b.MigrationsAssembly("TuLote")));
 
 builder.Services.AddScoped(typeof(IAplicacion<>), typeof(Aplicacion<>));
 builder.Services.AddScoped(typeof(IRepositorio<>), typeof(Repositorio<>));

@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row col-lg-3 col-md-6 col-9 m-6 col-xs-10  col-10  form-contacto"
              style="border-width: 1px; padding-bottom:15px; padding-top: 10px;border-radius: 20px; align-content">
-            <div class="card">
+            <div class="card bg-dark">
                 <div class="card-body">
                     <h2 class="text-warning text-center">INICIAR SESIÓN</h2>
                     <center><img class="img-form mb-2" src=~/img/candaosa.png /></center>
@@ -27,13 +27,13 @@
                         </div>
                         <div class="form-check mb-3 form-group">
                             <input type="checkbox" class="form-check-input bg-success" asp-for="Recuerdame">
-                            <label class="text-white" asp-for="Recuerdame"></label>
+                            <label class="text-warning" asp-for="Recuerdame"></label>
 
                         </div>
                         <div class="d-grid gap-2 form-group">
                             <button type="submit" asp-controller="Usuarios" class="btn btn-success fw-bold">Ingresar</button>
                             <a class="btn btn-warning text-secondary fw-bold" asp-action="Registro">Registrarse</a>
-                           
+
                         </div>
 
                     </form>

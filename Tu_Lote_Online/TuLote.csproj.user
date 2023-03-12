@@ -14,7 +14,7 @@
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
     <WebStackScaffolding_ViewDialogWidth>650,4</WebStackScaffolding_ViewDialogWidth>
-    <NameOfLastUsedPublishProfile>C:\Users\maty_\source\repos\TuLoteOnline\Tu_Lote_Online\Properties\PublishProfiles\FTPProfile.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\maty_\source\repos\TuLoteOnline\Tu_Lote_Online\Properties\PublishProfiles\matiasboiero-002-site1 - Web Deploy2.pubxml</NameOfLastUsedPublishProfile>
     <ActiveDebugProfile>TuLote</ActiveDebugProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

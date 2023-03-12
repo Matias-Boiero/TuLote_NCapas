@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TuLote.Entidades.DTOs
 {
@@ -11,10 +12,10 @@ namespace TuLote.Entidades.DTOs
         [Required(ErrorMessage = "Los metros cuadrados son requeridos")]
         [Display(Name = "Metros cuadrados")]
         public string Metros { get; set; }
-        [EnumDataType(typeof(Etapas))]
-        [Required(ErrorMessage = "La etapa es requerida")]
-        [Display(Name = "Etapa/Área")]
-        public Etapas Etapas { get; set; }
+        //[EnumDataType(typeof(Etapas))]
+        //[Required(ErrorMessage = "La etapa es requerida")]
+        //[Display(Name = "Etapa/Área")]
+        //public Etapas Etapas { get; set; }
         [EnumDataType(typeof(Tipo))]
         [Required(ErrorMessage = "La ubicación es requerida")]
         [Display(Name = "Tipo/Ubicación")]
@@ -30,12 +31,10 @@ namespace TuLote.Entidades.DTOs
         [Display(Name = "Creación del lote")]
         [Required(ErrorMessage = "Especifique una fecha")]
         public DateTime FechaCreacion { get; set; }
-        public string Usuario_Id { get; set; }
-
+        [ForeignKey("Usuario")]
+        public string? Usuario_Id { get; set; }
+        [NotMapped]
+        public Usuario? Usuario { get; set; }
         public int Barrio_Id { get; set; }
-
-
-
-
     }
 }

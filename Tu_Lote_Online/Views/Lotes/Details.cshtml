@@ -23,12 +23,12 @@
         <dd class="col-12">
             @Html.DisplayFor(model => model.Metros)
         </dd>
-        <dt class="col-12 text-warning">
+        @* <dt class="col-12 text-warning">
             @Html.DisplayNameFor(model => model.Etapas)
-        </dt>
-        <dd class="col-12">
+            </dt>
+            <dd class="col-12">
             @Html.DisplayFor(model => model.Etapas)
-        </dd>
+            </dd>*@
         <dt class="col-12 text-warning">
             @Html.DisplayNameFor(model => model.Tipo)
         </dt>
@@ -60,7 +60,7 @@
             @Html.DisplayFor(model => model.Barrio.Nombre)
         </dd>
     </dl>
-    <div class="btn-group col-6">
+    <div class="btn-group col-6 mb-3">
         @* <a class="text-white fs-6 fw-bolder ms-0 btn btn-secondary col-6" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>*@
         <a class="text-white fs-6 fw-bolder btn btn-warning col-6" asp-action="Index">Regresar</a>
     </div>

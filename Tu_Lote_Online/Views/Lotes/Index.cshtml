@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using TuLote.Entidades
 @model IEnumerable<TuLote.Entidades.DTOs.LoteDTO>
 
     @{
@@ -11,11 +12,11 @@
     var message = ViewBag.SuccessMsg;
 }
 
-<h1 class="text-warning">Lista de lotes</h1>
+<h1 class="text-warning text-center">Lista de lotes</h1>
 
 
-<div class="col-md-3 form-group d-grid">
-    <a asp-action="Crear" class="btn btn-success col-12 fw-bolder mb-3">Crear Lote</a>
+<div class="col-md-4 form-group d-grid">
+    <a asp-action="Crear" class="btn btn-success col-12 fw-bolder mb-3"><i class="fa-solid fa-house"></i>&nbsp&nbspCrear Lote</a>
 </div>
 
 
@@ -30,14 +31,14 @@
 
 @if (Model.Count() > 0)
 {
-    <div class="col-md-6">
+    <div class="col-md-6 mb-2">
         <table border="0" cellspacing="5" cellpadding="5">
             <tbody>
-                <tr class="col-6">
+                <tr class="col-3">
                     <td class="text-warning">Precio Mínimo:</td>
                     <td><input type="text" id="min" name="min"></td>
                 </tr>
-                <tr class="col-6">
+                <tr class="col-3">
                     <td class="text-warning">Precio Máximo:</td>
                     <td><input type="text" id="max" name="max"></td>
                 </tr>
@@ -45,24 +46,23 @@
         </table>
     </div>
 
-    <div class=table-responsive>
+    <div class="table-responsive-lg mb-4">
         <div class="table login-row">
             <div class="">
-                <table class="table table-light table-striped table-bordered col-lg-6 display" id="tabla">
+                <table class="table table-dark table-striped table-bordered col-lg-6 display" id="tabla">
                     <thead>
                         <tr class="col-md-12">
-                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center"> Localidad</th>
-                            <th scope="col" class="col-md-3 text-secondary fw-bolder text-center">Barrio</th>
+                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center"> Localidad</th>
+                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Barrio</th>
                             <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Número de Lote</th>
                             <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Metros</th>
-                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Área/Etapa</th>
-                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Tipo</th>
+                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Tipo</th>
                             <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Orientación</th>
-                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Precio</th>
-                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Disponible</th>
-                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Fecha</th>
-                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Agente</th>
-                            <th scope="col" class="col-md-3 text-secondary fw-bolder text-center">Acciones</th>
+                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Precio</th>
+                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Disponible</th>
+                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Fecha</th>
+                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Agente</th>
+                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -70,20 +70,20 @@
                         {
                             <tr class="col-md-6 text-center">
                                 <td scope="col">@item.Barrio.Localidad.Nombre</td>
-                                <td scope="col">@item.Barrio.Nombre</td>
-                                <td class="text-primary" scope="col">@item.Numero</td>
+                                <td class="text-success" scope="col">@item.Barrio.Nombre</td>
+                                <td class="text-secondary" scope="col">@item.Numero</td>
                                 <td scope="col">@item.Metros</td>
-                                @if (item.Etapas.ToString() == "Sin_Etapa")
-                                {
+                                @* @if (item.Etapas.ToString() == "Sin_Etapa")
+                                    {
                                     <td class="text-success" scope="col">@item.Barrio.Nombre</td>
-                                }
-                                else
-                                {
+                                    }
+                                    else
+                                    {
                                     <td class="text-success" scope="col">@item.Etapas</td>
-                                }
+                                    }*@
                                 <td scope="col">@item.Tipo</td>
                                 <td class="text-primary" scope="col">@item.Orientacion</td>
-                                <td class="text-danger" scope="col">@item.Precio</td>
+                                <td class="text-success" scope="col">@item.Precio</td>
                                 @if (item.Disponible == true)
                                 {
                                     <td scope="col"><i class="fa-solid fa-square-check fs-3 text-success"></i></td>
@@ -98,9 +98,9 @@
                                 @if (item.Usuario.Email == @User.Identity.Name)
                                 {
                                     <td scope="col">
-                                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil text-primary "></i></a> |
-                                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-paperclip text-success "></i></a> |
-                                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-regular fa-trash-can text-danger "></i></a>
+                                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil text-primary fs-6"></i></a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-paperclip text-success fs-6 "></i></a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-regular fa-trash-can text-danger fs-6"></i></a>
                                     </td>
                                 }
                                 else
@@ -152,12 +152,12 @@ else
                     "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
                     "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
                     "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-                    "sSearch": "Buscar:",
+                    "sSearch": "Buscar: ",
                     "oPaginate": {
                         "sFirst": "Primero",
                         "sLast":"Último",
-                        "sNext":"Siguiente",
-                        "sPrevious": "Anterior"
+                        "sNext":" Siguiente",
+                        "sPrevious": "Anterior "
                      },
                      "sProcessing":"Procesando...",
                 },
@@ -168,10 +168,10 @@ else
                 {
                     extend:    'excelHtml5',
                     exportOptions: {
-                    columns: [ 0, 1, 2, 3,4,5,6,7]
+                    columns: [ 0, 1, 2, 3,4,5,6]
                 },
                     text:      '<i class="fas fa-file-excel"></i> ',
-                    filename: 'Lotes_Canadosa_Prop',
+                    filename: 'Lotes_Candaosa_Prop',
                     titleAttr: 'Exportar a Excel',
                     className: 'btn btn-success',
                     title:"Lista de lotes - Candaosa Propiedades"
@@ -179,25 +179,24 @@ else
                 {
                     extend:    'pdfHtml5',
                     exportOptions: {
-                    columns: [ 0, 1, 2, 3,4,5,6,7]
+                    columns: [ 0, 1, 2, 3,4,5,6]
                 },
                     text:      '<i class="fas fa-file-pdf"></i> ',
-                    filename: 'Lotes_Canadosa_Prop',
+                    filename: 'Lotes_Candaosa_Prop',
                      orientation: 'landscape', //portrait
                     pageSize: 'A4', //A3 , A5 , A6 , legal , letter
                     titleAttr: 'Exportar a PDF',
                     className: 'btn btn-danger',
-                    title: "Lista de lotes -- Candaosa Propiedades - Tel: (011) 5612-3081 | +5491156123081 | info@candaosaprop.com"
-
+                     title: "Lista de lotes -- Candaosa Propiedades | info@candaosaprop.com"
                 },
                 {
 
                     extend:    'print',
                     exportOptions: {
-                    columns: [0, 1, 2, 3,4,5,6,7]
+                    columns: [0, 1, 2, 3,4,5,6]
                 },
                     text:      '<i class="fa fa-print"></i> ',
-                     filename: 'Lotes_Canadosa_Prop',
+                     filename: 'Lotes_Candaosa_Prop',
                     titleAttr: 'Imprimir',
                     className: 'btn btn-info',
                     title:"Lista de lotes - Candaosa Propiedades"
@@ -212,7 +211,7 @@ else
                        function( settings, data, dataIndex ) {
                            var min = $('#min').val() * 1;
                            var max = $('#max').val() * 1;
-                           var precio = parseFloat( data[7] ) || 0; // use data for the age column
+                           var precio = parseFloat( data[6] ) || 0; // use data for the age column
                            if ( ( min == '' && max == '' ) ||
                                 ( min == '' && precio <= max ) ||
                                 ( min <= precio && '' == max ) ||

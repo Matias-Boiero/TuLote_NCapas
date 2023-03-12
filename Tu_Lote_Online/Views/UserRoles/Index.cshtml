@@ -4,34 +4,35 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h1 class="text-warning">Roles de Usuarios</h1>
-<div class="table-responsive">
+<div class="col-md-6">
     <div class="table">
-        <table class="table table-striped tabla-roles" id="MyTable">
-            <thead>
-                <tr>
-
-                    <th>Email</th>
-                    <th>Roles</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var user in Model)
-                {
+        <div class="table">
+            <table class="table table-striped tabla-roles" id="MyTable">
+                <thead>
                     <tr>
 
-                        <td>@user.Email</td>
-                        <td>@string.Join(" , ", user.Roles.ToList())</td>
-                        <td>
-                            <a class="btn btn-warning fw-bolder" asp-controller="UserRoles" asp-action="Manage" asp-route-userId="@user.UserId">Roles activos</a>
-                        </td>
+                        <th>Email</th>
+                        <th>Roles</th>
+                        <th>Acción</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+
+                            <td>@user.Email</td>
+                            <td>@string.Join(" , ", user.Roles.ToList())</td>
+                            <td>
+                                <a class="btn btn-warning fw-bolder" asp-controller="UserRoles" asp-action="Manage" asp-route-userId="@user.UserId">Roles activos</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-
 
 
 

@@ -5,15 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <form method="post">
-    <div class="card">
+    <div class="card col-md-6">
         <div class="card-header">
             <h2 class="text-warning">Administrar roles de usuarios</h2>
-            <span class="text-white">Agregar/Eliminar Roles de Usuarios /@ViewBag.UserName.</span>
+            <span class="text-dark">Agregar/Eliminar Roles de Usuarios /@ViewBag.UserName.</span>
         </div>
         <div class="card-body">
             @for (int i = 0; i < Model.Count; i++)
             {
-                <div class="form-check m-1 text-white">
+                <div class="form-check m-1 text-dark">
                     <input type="hidden" asp-for="@Model[i].RoleId" />
                     <input type="hidden" asp-for="@Model[i].RoleName" />
                     <input asp-for="@Model[i].Selected" class="form-check-input" />

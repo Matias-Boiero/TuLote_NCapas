@@ -36,7 +36,6 @@
             <div class="form-group">
                 <select onchange="ddl_change_func(this,this);" class="form-control mb-2" asp-for="Nombre"
                         id="LocalidadId" name="LocalidadList" asp-items="@(new SelectList(string.Empty,"Id","Nombre"))" />
-                <option value="">-- Seleccionar Localidad --</option>
                 <input id="selected_val" type="hidden" name="Nombre" value="" />
                 <input id="selected_val3" type="hidden" name="id" value="" />
                 <span asp-validation-for="Nombre" class="text-white fw-bolder"></span>

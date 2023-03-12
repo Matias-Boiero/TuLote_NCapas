@@ -30,6 +30,8 @@ body {
     background-color: #20262E;
 }
 
+
+
 .img-form {
     width: 100px;
     height: 100px;
@@ -58,7 +60,7 @@ body {
 }
 
 .body_layout {
-    background-color: #222222;
+    background-color: #3A3845;
     /* background: url(/img/candaosa.png) no-repeat;*/
     background-position: bottom;
     background-size: cover;
@@ -66,13 +68,20 @@ body {
     max-width: 100%;
 }
 
+.dropdown-item:hover {
+    /*Modifica lo que quieras*/
+    background: #F2F7A1;
+    color: white;
+}
+
+
 .dataTables_wrapper {
-    background-color: #FFFFFF;
+    background-color: #F8F9D7;
     border: medium;
 }
 
 .tabla-roles {
-    background-color: #FFFFFF;
+    background-color: #F8F9D7;
 }
 
 .login-row {
@@ -85,16 +94,16 @@ body {
 
 .form-contacto {
     position: absolute;
-    top: 55%;
+    top: 57%;
     left: 50%;
-    transform: translate(-49%, -49%);
+    transform: translate(-46%, -47%);
 }
 
 .form-contacto2 {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
-    transform: translate(-49%, -49%);
+    transform: translate(-51%, -51%);
 }
 
 
@@ -112,10 +121,11 @@ footer {
 }
 
 .imagen-home {
-    width: 40%;
-    height: 20%;
+    width: 55px;
+    height: 55px;
     align-content: center;
     display: block;
+    margin: 0px;
 }
 
 

@@ -41,7 +41,7 @@ namespace TuLote.Controllers
         {
             var barrios = await _barrio.GetAll();
             var usuarios = await _usuario.GetAll();
-            ViewData["Barrio_Id"] = new SelectList(barrios, "Id", "Nombre");
+            ViewData["Barrio_Id"] = new SelectList(barrios, "Id", "Nombre").OrderBy(c => c.Text);
             ViewData["Usuario"] = new SelectList(usuarios, "Id", "Alias");
             return View();
         }
@@ -62,7 +62,7 @@ namespace TuLote.Controllers
             }
             var barrios = await _barrio.GetAll();
             var usuarios = await _usuario.GetAll();
-            ViewData["Barrio_Id"] = new SelectList(barrios, "Id", "Nombre");
+            ViewData["Barrio_Id"] = new SelectList(barrios, "Id", "Nombre").OrderBy(c => c.Text);
             ViewData["Usuario"] = new SelectList(usuarios, "Id", "Alias");
             return (View(lote));
         }
@@ -91,11 +91,12 @@ namespace TuLote.Controllers
             {
                 return NotFound();
             }
-            var lote = _loteRepository.GetFirst(p => p.Id == id, incluirPropiedades: "Barrio");
+            var lote = _loteRepository.GetFirst(p => p.Id == id, incluirPropiedades: "Usuario");
+            var loteCreacion = _mapper.Map<LoteCreacionDTO>(lote);
             var usuarios = await _usuario.GetAll();
             var barrios = await _barrio.GetAll();
             var usuario = _loteRepository.GetFirst(p => p.Id == id, incluirPropiedades: "Usuario");
-            if (lote == null)
+            if (loteCreacion == null)
             {
                 return NotFound();
             }
@@ -103,7 +104,7 @@ namespace TuLote.Controllers
             ViewData["Barrio_Id"] = new SelectList(barrios, "Id", "Nombre");
             ViewData["Usuario"] = new SelectList(usuarios, "Id", "Alias");
             //ViewData["Usuario"] = new SelectList(_context.Users, "Id", "Alias");
-            return View(lote);
+            return View(loteCreacion);
         }
 
 
@@ -117,7 +118,7 @@ namespace TuLote.Controllers
                 return NotFound();
             }
 
-            Lote lote = _mapper.Map<Lote>(loteCreacion);
+            var lote = _mapper.Map<Lote>(loteCreacion);
             var barrios = await _barrio.GetAll();
             if (ModelState.IsValid)
             {
@@ -136,7 +137,7 @@ namespace TuLote.Controllers
             }
             ViewData["Barrio_Id"] = new SelectList(barrios, "Id", "Nombre");
             // ViewData["Barrio_Id"] = new SelectList(_context.Barrios, "Id", "Nombre", lote.Barrio_Id);
-            return View(lote);
+            return View(loteCreacion);
         }
 
         // GET: Barrios/Delete/5

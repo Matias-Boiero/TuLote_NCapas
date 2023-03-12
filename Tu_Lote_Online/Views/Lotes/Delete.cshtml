@@ -7,10 +7,10 @@
 
 <h1 class="text-warning">Eliminar</h1>
 
-<h4 class="text-white text-bolder">¿Estás seguro de eliminarlo?</h4>
+<h4 class="text-danger text-bolder">¿Estás seguro de eliminarlo?</h4>
 <hr />
 <div class=col-md-3>
-    <dl class="col-12 text-white fw-bold">
+    <dl class="col-12 text-warning fw-bold">
         <dt class="col-12 text-secondary">
             @Html.DisplayNameFor(model => model.Numero)
         </dt>
@@ -22,12 +22,6 @@
         </dt>
         <dd class="col-12 ">
             @Html.DisplayFor(model => model.Metros)
-        </dd>
-        <dt class="col-12 text-secondary">
-            @Html.DisplayNameFor(model => model.Etapas)
-        </dt>
-        <dd class="col-12">
-            @Html.DisplayFor(model => model.Etapas)
         </dd>
         <dt class="col-12 text-secondary">
             @Html.DisplayNameFor(model => model.Tipo)
@@ -62,9 +56,9 @@
     </dl>
 
     <form asp-action="Delete">
-        <div class="col-12 btn-group">
-            <input type="submit" value="Eliminar" class="btn btn-danger fw-bolder col-6 rounded-1" />
-            <a class="btn btn-secondary text-white fw-bold col-6 rounded-1 ms-1" asp-action="Index">Regresar</a>
+        <div class="col-12 btn-group mb-3">
+            <button type="submit" value="Eliminar" class="btn btn-danger fw-bolder col-6 rounded-1"><i class="fa-solid fa-trash-can"></i>&nbsp&nbspEliminar</button>
+            <a class="btn btn-success text-white fw-bold col-6 rounded-1 ms-1" asp-action="Index"><i class="fa-solid fa-hand-point-left"></i>&nbsp&nbspRegresar</a>
             <input type="hidden" asp-for="Id" />
         </div>
     </form>

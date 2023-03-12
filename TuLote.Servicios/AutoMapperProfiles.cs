@@ -17,7 +17,7 @@ namespace TuLote.Servicios
             CreateMap<Barrio, BarrioDTO>().ReverseMap();
             CreateMap<BarrioCreacionDTO, Barrio>();
             CreateMap<Lote, LoteDTO>().ReverseMap();
-            CreateMap<LoteCreacionDTO, Lote>();
+            CreateMap<LoteCreacionDTO, Lote>().ReverseMap();
         }
     }
 }

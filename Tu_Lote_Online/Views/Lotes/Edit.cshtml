@@ -1,20 +1,19 @@
 ﻿@using TuLote.Entidades
-@model TuLote.Entidades.Lote
+@model TuLote.Entidades.DTOs.LoteCreacionDTO
 
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-warning">Editar</h1>
+<h1 class="text-warning">Editar Lote</h1>
 
-<h4 class="text-warning">Lote</h4>
 <hr />
 <div class="row text-white fw-bolder fs-6">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Id" class="fw-bold mb-1" />
             <div class="form-group">
                 <label asp-for="Numero" class="control-label"></label>
                 <input asp-for="Numero" disabled class="form-control" />
@@ -27,11 +26,11 @@
                 <input asp-for="Metros" class="form-control" />
                 <span asp-validation-for="Metros" class="text-danger"></span>
             </div>
-            <div>
+            @*<div>
                 <label asp-for="Etapas" class="mb-2" style="font-weight:bold;"></label>
                 @Html.DropDownList("Etapas", Html.GetEnumSelectList<Etapas>(), "Seleccionar Área/Etapa", new { @class = "form-control" })
                 <span asp-validation-for="Orientacion" class="text-danger"></span>
-            </div>
+                </div>*@
             <div>
                 <label asp-for="Orientacion" class="mb-2" style="font-weight:bold;"></label>
                 @Html.DropDownList("Orientacion", Html.GetEnumSelectList<Orientaciones>(), "Seleccionar orientación", new { @class = "form-control" })
@@ -67,9 +66,11 @@
                 <input asp-for="Usuario.Alias" disabled class="form-control" />
                 <input type="hidden" asp-for="Usuario_Id" />
             </div>
-            <div class="btn-group col-12">
-                <input type="submit" value="Guardar" class="btn btn-success col-6" />
-                <a class="text-white btn btn-warning col-6" asp-action="Index">Regresar</a>
+            <div class="btn-group col-12 mb-4">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-success col-6 rounded"><i class="fa-solid fa-floppy-disk"></i>&nbsp&nbspGuardar</button>
+                <a class="text-white btn btn-warning col-6 ms-1 rounded" asp-action="Index"><i class="fa-solid fa-hand-point-left"></i>&nbsp&nbspRegresar</a>
+
             </div>
         </form>
     </div>

@@ -5,12 +5,6 @@
       "resourceId": null,
       "type": "mssql.onprem",
       "connectionId": "ConnectionStrings:DefaultConnection"
-    },
-    "appInsights1": {
-      "ignored": "true",
-      "suggestion": "true",
-      "type": "appInsights",
-      "connectionId": ""
     }
   }
 }
