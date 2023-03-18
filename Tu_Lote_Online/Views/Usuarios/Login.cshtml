@@ -4,45 +4,34 @@
     ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <body class="login-body">
-    <div class="container">
-        <div class="row col-lg-3 col-md-6 col-9 m-6 col-xs-10  col-10  form-contacto"
-             style="border-width: 1px; padding-bottom:15px; padding-top: 10px;border-radius: 20px; align-content">
-            <div class="card bg-dark">
-                <div class="card-body">
-                    <h2 class="text-warning text-center">INICIAR SESIÓN</h2>
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-7 col-lg-5 col-xl-5">
+                <form asp-action="Login">
+                    <h1 class="text-warning text-center">INICIAR SESIÓN</h1>
                     <center><img class="img-form mb-2" src=~/img/candaosa.png /></center>
-                    <form asp-action="Login">
-                        <div asp-validation-summary="ModelOnly" class="text-dander"> </div>
-                        <div class="mb-3 form-group">
-                            @*<label asp-for="Email" class="form-label"></label>*@
-                            <input asp-for="Email" type="email" class="form-control" placeholder="--ejemplo@gmail.com--" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                        </div>
-                        <div class="mb-3 form-group">
-                            @*<label asp-for="Password" class="form-label"></label>*@
-                            <input asp-for="Password" class="form-control" placeholder="--Ingrese su clave--" />
-                            <span asp-validation-for="Password" class="text-danger"></span>
-                        </div>
-                        <div class="form-check mb-3 form-group">
-                            <input type="checkbox" class="form-check-input bg-success" asp-for="Recuerdame">
-                            <label class="text-warning" asp-for="Recuerdame"></label>
-
-                        </div>
-                        <div class="d-grid gap-2 form-group">
-                            <button type="submit" asp-controller="Usuarios" class="btn btn-success fw-bold">Ingresar</button>
-                            <a class="btn btn-warning text-secondary fw-bold" asp-action="Registro">Registrarse</a>
-
-                        </div>
-
-                    </form>
-                </div>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label">Email</label>
+                        <input asp-for="Email" type="email" type="email" class="form-control form-control-md text-center fs-6" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label">Contraseña</label>
+                        <input asp-for="Password" type="password" class="form-control form-control-md text-center fs-6" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="d-grid gap-2 form-group">
+                        <button type="submit" asp-controller="Usuarios" class="btn btn-success fw-bold fs-6">Ingresar</button>
+                        <a class="btn btn-warning text-secondary fw-bold fs-6" asp-action="Registro">Registrarse</a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-
 </body>
+
 
 
 

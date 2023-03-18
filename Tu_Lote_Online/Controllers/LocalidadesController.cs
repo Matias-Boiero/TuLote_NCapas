@@ -79,5 +79,21 @@ namespace TuLote.Controllers
             return Json(localidades);
         }
 
+        //PARA CAPTAR LAS LOCALIDADES DIRECTAMENTE DE LA BASE DE DATOS Y NO DESDE LA API
+        public JsonResult GetLocalidadesByIdNuevo(int idMunicipio)
+        {
+            List<Localidad> localidades = new List<Localidad>();
+
+            // localidades = _API_Localidad.Lista().Result.Where(x => x.Municipio.Id == idMunicipio).OrderBy(l => l.Nombre).ToList();
+            localidades = _aplicacion.GetAll().Result.Where(x => x.Municipio_Id == idMunicipio).OrderBy(l => l.Nombre).ToList();
+            localidades.Insert(0, new Localidad
+            {
+                Id = 0,
+                Nombre = "Por favor seleccione una localidad"
+            });
+
+            return Json(localidades);
+        }
+
     }
 }

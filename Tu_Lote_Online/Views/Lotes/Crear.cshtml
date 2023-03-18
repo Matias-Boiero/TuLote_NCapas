@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="mt-4">
-    <h3 class="text-start text-warning">Crear Lote</h3>
+    <h3 class="text-start text-warning mb-3">Crear Lote</h3>
     <form method="post" asp-action="Crear" method="post" id="formulario" onsubmit="enviarFormulario(event)">
         <div class="row col-md-12">
             <div asp-validation-summary="ModelOnly" class="danger"></div>
@@ -67,8 +67,8 @@
 
             </div>
             <div class="col-md-8 btn-group mb-3">
-                <button type="submit" class="btn btn-success col-md-6"><i class="fa-solid fa-house-circle-check"></i>&nbsp&nbspCrear</button>
-                <a class="btn btn-warning text-white col-md-6" asp-action="Index"><i class="fa-solid fa-hand-point-left"></i>&nbsp&nbspRegresar</a>
+                <button type="submit" class="btn btn-success col-md-6 fs-6 fw-bold"><i class="fa-solid fa-house-circle-check"></i>&nbsp&nbspCrear</button>
+                <a class="btn btn-warning text-white col-md-6 fs-6 fw-bold" asp-action="Index"><i class="fa-solid fa-backward"></i>&nbsp&nbspRegresar</a>
             </div>
         </div>
 

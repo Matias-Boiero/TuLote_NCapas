@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-warning">Eliminar</h1>
+<h1 class="text-warning">Eliminar barrio</h1>
 
-<h3 class="text-white text-bolder">¿Estás seguro que quieres eliminar este barrio?</h3>
+<h3 class="text-danger text-bolder col-md-4">¿Estás seguro de eliminarlo?</h3>
 <div class="col-md-6">
 
     <hr />
@@ -29,8 +29,8 @@
         <form asp-action="Delete">
             <div class="btn-group col-8">
                 <input type="hidden" asp-for="Id" />
-                <input type="submit" value="Eliminar" class="btn btn-danger fw-bolder col-6 rounded" />
-                <a class="text-white fw-bolder btn btn-success col-6 rounded ms-1" asp-action="Index">Regresar</a>
+                <input type="submit" value="Eliminar" class="btn btn-danger fw-bolder col-6 rounded fs-6 fw-bold" />
+                <a class="text-white fw-bolder btn btn-success col-6 rounded ms-1 fs-6 fw-bold" asp-action="Index">Regresar</a>
             </div>
         </form>
     </div>

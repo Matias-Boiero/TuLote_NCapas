@@ -15,12 +15,6 @@
 <h1 class="text-warning text-center">Lista de lotes</h1>
 
 
-<div class="col-md-4 form-group d-grid">
-    <a asp-action="Crear" class="btn btn-success col-12 fw-bolder mb-3"><i class="fa-solid fa-house"></i>&nbsp&nbspCrear Lote</a>
-</div>
-
-
-
 <!-- Validacion para desplegar Mensaje despues del POST-->
 @if (TempData["success"] != null)
 {
@@ -28,99 +22,111 @@
         @Html.Encode(TempData["success"])
     </div>
 }
+<div class="col-md-3 form-group d-grid mb-3">
+    <a asp-action="Crear" class="btn btn-success col-12 fw-bolder mb-3 fs-6"><i class="fa-solid fa-house"></i>&nbsp&nbspCrear lote</a>
+</div>
+<div class="col-md-9 mb-2 ">
 
+    <div class="">
+    </div>
+    <table border="0" cellspacing="5" cellpadding="5">
+        <tbody>
+            <tr class="col-md-10">
+                @* <td class="text-warning fw-bold col-1">Precio mínimo</td>*@
+                <td><input type="text" class="form-control col-md-12 input-lg rounded-3 text-center" placeholder="Valor desde" id="min" name="min"></td>
+
+                @*<td class="text-warning fw-bold col-1">Precio hasta</td>*@
+                <td><input class="form-control input-lg col-md-12 rounded-3 text-center" placeholder="Valor hasta" type="text" id="max" name="max"></td>
+
+
+                @*<td class="text-warning fw-bold col-1">Metros desde</td>*@
+                <td><input class="form-control input-lg col-md-12 rounded-3 text-center" placeholder="Mts desde" type="text" id="metros" name="max"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 @if (Model.Count() > 0)
 {
-    <div class="col-md-6 mb-2">
-        <table border="0" cellspacing="5" cellpadding="5">
-            <tbody>
-                <tr class="col-3">
-                    <td class="text-warning">Precio Mínimo:</td>
-                    <td><input type="text" id="min" name="min"></td>
-                </tr>
-                <tr class="col-3">
-                    <td class="text-warning">Precio Máximo:</td>
-                    <td><input type="text" id="max" name="max"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 
-    <div class="table-responsive-lg mb-4">
-        <div class="table login-row">
-            <div class="">
-                <table class="table table-dark table-striped table-bordered col-lg-6 display" id="tabla">
-                    <thead>
-                        <tr class="col-md-12">
-                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center"> Localidad</th>
-                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Barrio</th>
-                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Número de Lote</th>
-                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Metros</th>
-                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Tipo</th>
-                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Orientación</th>
-                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Precio</th>
-                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Disponible</th>
-                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Fecha</th>
-                            <th scope="col" class="col-md-1 text-secondary fw-bolder text-center">Agente</th>
-                            <th scope="col" class="col-md-2 text-secondary fw-bolder text-center">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr class="col-md-6 text-center">
-                                <td scope="col">@item.Barrio.Localidad.Nombre</td>
-                                <td class="text-success" scope="col">@item.Barrio.Nombre</td>
-                                <td class="text-secondary" scope="col">@item.Numero</td>
-                                <td scope="col">@item.Metros</td>
-                                @* @if (item.Etapas.ToString() == "Sin_Etapa")
-                                    {
+    <div style="overflow-x:auto;">
+
+        <div class="mb-4 ">
+
+            <div class="table login-row">
+
+                <div class="">
+
+                    <table class="table table-dark table-striped table-bordered col-lg-6 display" id="tabla">
+                        <thead>
+                            <tr class="col-md-12">
+                                <th scope="col" class="col-md-1 text-warning fw-bolder text-center"> Localidad</th>
+                                <th scope="col" class="col-md-1 text-warning fw-bolder text-center">Barrio</th>
+                                <th scope="col" class="col-md-1 text-warning fw-bolder text-center">Lote</th>
+                                <th scope="col" class="col-md-1 text-warning fw-bolder text-center">Metros cuadrados</th>
+                                <th scope="col" class="col-md-1 text-warning fw-bolder text-center">Tipo</th>
+                                <th scope="col" class="col-md-1 text-warning fw-bolder text-center">Orientación</th>
+                                <th scope="col" class="col-md-1 text-warning fw-bolder text-center">Precio</th>
+                                <th scope="col" class="col-md-1 text-warning fw-bolder text-center">Disponible</th>
+                                <th scope="col" class="col-md-1 text-warning fw-bolder text-center">Fecha Alta</th>
+                                <th scope="col" class="col-md-1 text-warning fw-bolder text-center">Agente</th>
+                                <th scope="col" class="col-md-2 text-warning fw-bolder text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="col-md-6 text-center">
+                                    <td scope="col">@item.Barrio.Localidad.Nombre</td>
                                     <td class="text-success" scope="col">@item.Barrio.Nombre</td>
+                                    <td class="text-secondary" scope="col">@item.Numero</td>
+                                    <td scope="col">@item.Metros</td>
+                                    <td scope="col">@item.Tipo</td>
+                                    <td class="" scope="col">@item.Orientacion</td>
+                                    <td class="text-secondary" scope="col">@item.Precio</td>
+                                    @if (item.Disponible == true)
+                                    {
+                                        <td scope="col"><i class="fa-solid fa-square-check fs-3 text-success"></i></td>
                                     }
                                     else
                                     {
-                                    <td class="text-success" scope="col">@item.Etapas</td>
-                                    }*@
-                                <td scope="col">@item.Tipo</td>
-                                <td class="text-primary" scope="col">@item.Orientacion</td>
-                                <td class="text-success" scope="col">@item.Precio</td>
-                                @if (item.Disponible == true)
-                                {
-                                    <td scope="col"><i class="fa-solid fa-square-check fs-3 text-success"></i></td>
-                                }
-                                else
-                                {
-                                    <td scope="col"><i class="fa-solid fa-gavel alert-danger fs-3"></i></td>
-                                }
+                                        <td scope="col"><i class="fa-solid fa-gavel alert-danger fs-3"></i></td>
+                                    }
 
-                                <td scope="col">@item.FechaCreacion.ToString("dd/MM/yy")</td>
-                                <td class="text-success" scope="col">@item.Usuario.Alias</td>
-                                @if (item.Usuario.Email == @User.Identity.Name)
-                                {
-                                    <td scope="col">
-                                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil text-primary fs-6"></i></a> |
-                                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-paperclip text-success fs-6 "></i></a> |
-                                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-regular fa-trash-can text-danger fs-6"></i></a>
-                                    </td>
-                                }
-                                else
-                                {
-                                    <td scope="col">
-                                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-paperclip text-success "></i></a>
-                                    </td>
-                                }
+                                    <td scope="col">@item.FechaCreacion.ToString("dd/MM/yy")</td>
+                                    <td class="text-secondary" scope="col">@item.Usuario.Alias</td>
+                                    @if (item.Usuario.Email == @User.Identity.Name)
+                                    {
+                                        <td scope="col">
+                                            <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil text-success fs-6"></i></a> |
+                                            <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-paperclip text-primary fs-6 "></i></a> |
+                                            <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-regular fa-trash-can text-danger fs-6"></i></a>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td scope="col">
+                                            <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-paperclip text-success "></i></a>
+                                        </td>
+                                    }
 
-                            </tr>
-                        }
-                    </tbody>
+                                </tr>
+                            }
+                        </tbody>
 
-                </table>
+
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 }
 else
 {
+
+    <div class="col-md-3 form-group d-grid">
+        <a asp-action="Crear" class="btn btn-success col-12 fw-bolder mb-3 fs-6"><i class="fa-solid fa-house"></i>&nbsp&nbspCrear lote</a>
+    </div>
+
     <p class="text--white">No hay lotes para mostrar</p>
 }
 
@@ -146,6 +152,7 @@ else
 
         $(document).ready(function() {
         $('#tabla').DataTable({
+
             language: {
                     "lengthMenu": "Mostrar _MENU_ registros",
                     "zeroRecords": "No se encontraron resultados",
@@ -206,7 +213,8 @@ else
         });
     });
 
-    /* Custom filtering function which will search data in column four between two values */
+
+                // bisqueda por precios minimos y maximos
                    $.fn.dataTable.ext.search.push(
                        function( settings, data, dataIndex ) {
                            var min = $('#min').val() * 1;
@@ -226,6 +234,30 @@ else
                        var table = $('#tabla').DataTable();
                        // Event listener to the two range filtering inputs to redraw on input
                        $('#min, #max').keyup( function() {
+                           table.draw();
+                       } );
+                   } );
+
+
+                   //busqueda por cantidad de metros
+                    $.fn.dataTable.ext.search.push(
+                       function( settings, data, dataIndex ) {
+                           var metrosdesde = $('#metros').val() * 1;
+
+                           var metro = parseFloat( data[3] ) || 0; // use data for the age column
+                           if ( ( metrosdesde == '' ) ||
+                                ( metrosdesde <= metro && '' == metro ) ||
+                                ( metrosdesde <= metro) )
+                           {
+                               return true;
+                           }
+                           return false;
+                       }
+                   );
+                   $(document).ready(function() {
+                       var table = $('#tabla').DataTable();
+                       // Event listener to the two range filtering inputs to redraw on input
+                       $('#metros').keyup( function() {
                            table.draw();
                        } );
                    } );

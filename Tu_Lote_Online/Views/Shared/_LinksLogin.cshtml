@@ -5,12 +5,12 @@
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
-        <li class="nav-item">
-            <span class="nav-link bg-warning text-black fw-bold">¡Hola, @User.Identity.Name!</span>
+        <li class="nav-item ">
+            <span class="nav-link bg-warning text-black fw-bold mt-1 text-center">¡Hola, @User.Identity.Name!</span>
         </li>
         <li class="nav-item">
             <form class="form-inline" asp-action="Logout" asp-controller="usuarios">
-                <button type="submit" class="nav-link btn btn-lin text-secondary fw-bold ">Salir</button>
+                <button type="submit" class="nav-link btn btn-lin text-secondary fw-bold mt-1">Salir</button>
             </form>
         </li>
     }

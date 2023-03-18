@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<TuLote.Entidades.DTOs.BarrioDTO>
-
+@using Microsoft.AspNetCore.Identity
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,12 +18,15 @@
 }
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-<h1 class="text-warning">Lista de barrios</h1>
+<h1 class="text-warning text-center">Lista de barrios</h1>
 
+@if (@User.IsInRole("Administrador"))
+{
+    <div class="col-md-3 form-group d-grid">
+        <a asp-action="Create" class="btn btn-success col-12 fw-bolder mb-4 fs-6"><i class="fa-solid fa-tree-city"></i>&nbsp&nbspCrear barrio</a>
+    </div>
+}
 
-<div class="col-md-3 form-group d-grid">
-    <a asp-action="Create" class="btn btn-success col-12 fw-bolder mb-4"><i class="fa-solid fa-tree-city"></i>&nbsp&nbspCrear Barrio</a>
-</div>
 
 
 
@@ -33,13 +36,24 @@
         <div class="table">
             <table class="table table-dark table-striped table-bordered" id="MiTabla">
                 <thead>
+                    @if (@User.IsInRole("Administrador"))
+                    {
+                        <tr class="col-md-9 text-center">
+                            <th scope="col" class="col-md-2 text-warning">Municipio</th>
+                            <th scope="col" class="col-md-2 text-warning">Localidad</th>
+                            <th scope="col" class="col-md-2 text-warning">Barrio</th>
+                            <th scope="col" class="col-md-1 text-warning">Acción</th>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr class="col-md-9 text-center">
+                            <th scope="col" class="col-md-2 text-warning">Municipio</th>
+                            <th scope="col" class="col-md-2 text-warning">Localidad</th>
+                            <th scope="col" class="col-md-2 text-warning">Barrio</th>
+                        </tr>
+                    }
 
-                    <tr class="col-md-9 text-center">
-                        <th scope="col" class="col-md-2">Municipio</th>
-                        <th scope="col" class="col-md-2">Localidad</th>
-                        <th scope="col" class="col-md-2">Barrio</th>
-                        <th scope="col" class="col-md-2">Acción</th>
-                    </tr>
 
                 </thead>
                 <tbody>
@@ -49,14 +63,15 @@
                             <td scope="col">@item.Localidad.Municipio.Nombre</td>
                             <td scope="col">@item.Localidad.Nombre</td>
                             <td class="text-secondary" scope="col">@item.Nombre</td>
-                            <td scope="col" class="col-3">
-                                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil text-primary fs-6"></i></a> |
-                                <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-paperclip text-success fs-6"></i></a> |
-                                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-regular fa-trash-can text-danger fs-6"></i></a>
-                            </td>
-
+                            @if (@User.IsInRole("Administrador"))
+                            {
+                                <td scope="col" class="col-3">
+                                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pencil text-success fs-6"></i></a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-paperclip text-primary fs-6"></i></a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-regular fa-trash-can text-danger fs-6"></i></a>
+                                </td>
+                            }
                         </tr>
-
                     }
                 </tbody>
 

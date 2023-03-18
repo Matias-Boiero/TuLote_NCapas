@@ -24,11 +24,20 @@
             @Html.DisplayFor(model => model.Localidad.Nombre)
         </dd>
     </dl>
+    @if (@User.IsInRole("Administrador"))
+    {
+        <div class="btn-group col-4">
+            <a class="text-white fw-bolder btn btn-success col-12 fs-6 fw-bold" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+            <a class="text-white fw-bolder btn btn-warning col-12 fs-6 fw-bold" asp-action="Index">Regresar</a>
+        </div>
+    }
+    else
+    {
+        <div class="btn-group col-4">
+            <a class="text-white fw-bolder btn btn-warning col-6 " asp-action="Index">Regresar</a>
+        </div>
+    }
 
-    <div class="btn-group col-4">
-        <a class="text-white fw-bolder btn btn-success col-12" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
-        <a class="text-white fw-bolder btn btn-warning col-12 " asp-action="Index">Regresar</a>
-    </div>
 </div>
 
 

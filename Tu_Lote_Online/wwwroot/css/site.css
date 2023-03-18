@@ -18,6 +18,46 @@ body {
     overflow-x: auto
 }
 
+
+.dropdown {
+    cursor: pointer;
+    line-height: 20px;
+    position: relative;
+    width: auto;
+    text-align: start;
+    text-decoration: none;
+    z-index: 1;
+    transform: perspective(1000px);
+}
+
+.dropdown-menu li:first-child {
+    cursor: default;
+}
+
+.dropdown-menu a {
+    color: #20262E;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    -webkit-transition: all .5s;
+    transition: all 1s;
+}
+
+    .dropdown-menu a:hover {
+        background: #4D4D4D;
+        color: #fff;
+    }
+
+.dropdown:hover .dropdown-menu {
+    background: #20262E;
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    width: 100%;
+    -webkit-transition: all .5s, background, 2s .5s linear .5s;
+    transition: all .5s, background 2s .5s linear;
+}
+
 .login-body {
     background: url(/img/candaosa.png);
     background-position: center;
@@ -26,11 +66,6 @@ body {
     max-width: 100%;
 }
 
-.card {
-    background-color: #20262E;
-}
-
-
 
 .img-form {
     width: 100px;
@@ -38,8 +73,6 @@ body {
     align-content: center;
     display: block;
 }
-
-
 
 .titulo {
     color: #227C70;
@@ -68,17 +101,12 @@ body {
     max-width: 100%;
 }
 
-.dropdown-item:hover {
-    /*Modifica lo que quieras*/
-    /* background: #BFACE2;*/
-    /*color:;*/
-}
 
 
-.dataTables_wrapper {
-    background-color: #F0EEED;
+/*.dataTables_wrapper {
+    background-color: #FFFFFF;
     border: medium;
-}
+}*/
 
 .tabla-roles {
     background-color: #FBFBFB;
@@ -91,22 +119,6 @@ body {
 .login-container {
     padding-right: 0px;
 }
-
-.form-contacto {
-    position: absolute;
-    top: 54%;
-    left: 50%;
-    transform: translate(-46%, -47%);
-}
-
-.form-contacto2 {
-    position: absolute;
-    top: 54%;
-    left: 50%;
-    transform: translate(-51%, -51%);
-}
-
-
 
 footer {
     background-color: #2D2424;
@@ -143,4 +155,229 @@ footer {
         display: block;
         overflow-x: auto;
     }
+}
+
+a {
+    text-decoration: none;
+}
+
+.login-page {
+    width: 100%;
+    height: 100vh;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+
+.form-right i {
+    font-size: 100px;
+}
+
+/*param el formulario*/
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+/*datatable*/
+:root {
+    --primary-color: white;
+    --secondary-color: rgb(61, 68, 73);
+    --highlight-color: #3282b8;
+    --dt-status-available-color: greenyellow;
+    --dt-status-away-color: lightsalmon;
+    --dt-status-offline-color: lightgray;
+    --dt-padding: 12px;
+    --dt-padding-s: 6px;
+    --dt-padding-xs: 2px;
+    --dt-border-radius: 3px;
+    --dt-background-color-container: #2a3338;
+    --dt-border-color: var(--secondary-color);
+    --dt-bg-color: var(--highlight-color);
+    --dt-text-color: var(--primary-color);
+    --dt-bg-active-button: var(--highlight-color);
+    --dt-text-color-button: var(--primary-color);
+    --dt-text-color-active-button: var(--primary-color);
+    --dt-hover-cell-color: var(--highlight-color);
+    --dt-even-row-color: var(--secondary-color);
+    --dt-focus-color: var(--highlight-color);
+    --dt-input-background-color: var(--secondary-color);
+    --dt-input-color: var(--primary-color);
+}
+
+
+.datatable-container {
+    font-family: sans-serif;
+    background-color: var(--dt-background-color-container);
+    border-radius: var(--dt-border-radius);
+    color: var(--dt-text-color);
+    max-width: 1140px;
+    min-width: 950px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+    .datatable-container .header-tools {
+        border-bottom: solid 1px var(--dt-border-color);
+        padding: var(--dt-padding);
+        padding-left: 0;
+        display: flex;
+        align-items: baseline;
+    }
+
+        .datatable-container .header-tools .search {
+            width: 30%;
+        }
+
+            .datatable-container .header-tools .search .search-input {
+                width: 100%;
+                height: calc(1.5em + 0.75rem + 2px);
+                padding: 0.375rem 0.75rem;
+                background-color: var(--dt-input-background-color);
+                display: block;
+                box-sizing: border-box;
+                border-radius: var(--dt-border-radius);
+                border: solid 1px var(--dt-border-color);
+                color: var(--dt-input-color);
+            }
+
+        .datatable-container .header-tools .tools {
+            width: 70%;
+        }
+
+            .datatable-container .header-tools .tools ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: start;
+                align-items: baseline;
+            }
+
+                .datatable-container .header-tools .tools ul li {
+                    display: inline-block;
+                    margin: 0 var(--dt-padding-xs);
+                    align-items: baseline;
+                }
+
+
+
+    .datatable-container .datatable {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        .datatable-container .datatable,
+        .datatable-container .datatable th,
+        .datatable-container .datatable td {
+            padding: var(--dt-padding) var(--dt-padding);
+        }
+
+            .datatable-container .datatable th {
+                font-weight: bolder;
+                text-align: left;
+                border-bottom: solid 1px var(--dt-border-color);
+            }
+
+            .datatable-container .datatable td {
+                border-bottom: solid 1px var(--dt-border-color);
+            }
+
+            .datatable-container .datatable tbody tr:nth-child(even) {
+                background-color: var(--dt-even-row-color);
+            }
+
+            .datatable-container .datatable tbody tr:hover {
+                background-color: var(--dt-hover-cell-color);
+            }
+
+            .datatable-container .datatable tbody tr .available::after,
+            .datatable-container .datatable tbody tr .away::after,
+            .datatable-container .datatable tbody tr .offline::after {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .datatable-container .datatable tbody tr .available::after {
+                content: "Online";
+                color: var(--dt-status-available-color);
+            }
+
+            .datatable-container .datatable tbody tr .away::after {
+                content: "Away";
+                color: var(--dt-status-away-color);
+            }
+
+            .datatable-container .datatable tbody tr .offline::after {
+                content: "Offline";
+                color: var(--dt-status-offline-color);
+            }
+
+            .datatable-container .datatable tbody tr .available::before,
+            .datatable-container .datatable tbody tr .away::before,
+            .datatable-container .datatable tbody tr .offline::before {
+                content: "";
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                margin-right: 10px;
+                border-radius: 50%;
+                vertical-align: middle;
+            }
+
+            .datatable-container .datatable tbody tr .available::before {
+                background-color: var(--dt-status-available-color);
+            }
+
+            .datatable-container .datatable tbody tr .away::before {
+                background-color: var(--dt-status-away-color);
+            }
+
+            .datatable-container .datatable tbody tr .offline::before {
+                background-color: var(--dt-status-offline-color);
+            }
+
+/*.dataTables_info {
+    color: white;
+}*/
+
+div.dataTables_info {
+    color: white !important;
+}
+
+.dataTables_length {
+    color: #7B8FA1;
+}
+
+#MiTabla_length {
+    color: #7B8FA1;
+}
+
+.paginate_button {
+    color: white;
+    background: #716F81;
+}
+
+.dataTables_filter {
+    color: #7B8FA1;
+}
+
+#MiTabla_filter {
+    color: #7B8FA1;
+}
+
+
+#MiTabla_next {
+    background: #E6AF2E;
+}
+
+#MiTabla_previous {
+    background: #E6AF2E;
+}
+
+
+.ellipsis {
+    color: #92A9BD;
 }

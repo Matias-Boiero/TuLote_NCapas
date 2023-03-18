@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using TuLote.AccesoDatos;
 using TuLote.Aplicacion;
 using TuLote.Entidades;
 using TuLote.Entidades.DTOs;
@@ -10,7 +11,7 @@ using TuLote.Servicios;
 
 namespace TuLote.Controllers
 {
-    [Authorize(Roles = "Administrador")]
+    [Authorize(Roles = "Administrador,Agente")]
     public class BarriosController : Controller
     {
 
@@ -18,16 +19,21 @@ namespace TuLote.Controllers
         private readonly IServicio_API_Municipio _API_Municipio;
         private readonly IBarrioRepositorio<Barrio> _barrioRepositorio;
         private readonly IMapper _mapper;
+        private readonly ApplicationDbContext _context;
+        //private readonly IRepositorio<Municipio> _municipiosRepositorio;
         private readonly IAplicacion<Barrio> _aplicacion;
 
         public BarriosController(IAplicacion<Barrio> aplicacion, IServicio_API_Localidad API_localidad,
-            IServicio_API_Municipio API_Municipio, IBarrioRepositorio<Barrio> barrioRepositorio, IMapper mapper)
+            IServicio_API_Municipio API_Municipio, IBarrioRepositorio<Barrio> barrioRepositorio, IMapper mapper,
+           ApplicationDbContext context)
         {
             _aplicacion = aplicacion;
             _API_Localidad = API_localidad;
             _API_Municipio = API_Municipio;
             _barrioRepositorio = barrioRepositorio;
             _mapper = mapper;
+            _context = context;
+            //_municipiosRepositorio = municipiosRepositorio;
         }
 
         // GET: Barrios
@@ -40,10 +46,11 @@ namespace TuLote.Controllers
         }
 
         // GET: Barrios/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
 
-            ViewBag.listaMunicipios = _API_Municipio.Lista().Result.OrderBy(m => m.Nombre).ToList();
+            //ViewBag.listaMunicipios = _API_Municipio.Lista().Result.OrderBy(m => m.Nombre).ToList();
+            ViewBag.listaMunicipios = await _context.Municipios.ToListAsync();
             return View();
         }
 

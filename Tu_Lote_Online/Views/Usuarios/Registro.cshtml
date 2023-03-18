@@ -4,63 +4,62 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div class="form-contacto2 col-lg-3 col-md-6 col-9 m-6 col-xs-10  col-10 ms-1">
-        <div class="card rounded-2">
-            <div class="card-body bg-dark">
-                <h2 class="text-warning text-center">REGISTRARSE</h2>
-                <div class="card bg-dark">
-                    <form asp-action="Registro">
-                        <div class="col-md-12  text-center ">
-                            <div asp-validation-summary="ModelOnly" class="text-dander"> </div>
-                            <div class="mb-1 form-group">
-                                <input type="text" asp-for="Nombre" placeholder="--Nombre--" class="form-control text-center" />
-                                <span asp-validation-for="Nombre" class="text-danger"></span>
-                            </div>
-                            <div class="mb-1">
-                                <input asp-for="Apellido" placeholder="--Apellido--" class="form-control text-center" />
-                                <span asp-validation-for="Apellido" class="text-danger"></span>
-                            </div>
-                            <div class="mb-1">
-                                <input asp-for="Alias" placeholder="--Alias--(Ej: MRB)" class="form-control text-center" />
-                                <span asp-validation-for="Alias" class="text-danger"></span>
-                            </div>
-                            <div class="mb-1">
-                                <input asp-for="Email" type="email" class="form-control text-center" placeholder="ejemplo@gmail.com" />
-                                <span asp-validation-for="Email" class="text-danger"></span>
-                            </div>
-                            <div class=" ">
-                                <input asp-for="Contraseña" id="myInput" class="form-control text-center" placeholder="--Ingrese su clave--" />
-                                <button type="button" onclick="myFunction()" class="btn btn-secondary mt-1 mostrar">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <span asp-validation-for="Contraseña" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <div class="text-center d-grid  mt-1">
-                            <button type="submit" class="btn btn-success btn-block fw-bold">Registrarse</button>
-                            <a class="btn btn-warning btn-block text-secondary fw-bold mt-1" asp-action="login">Loguearme</a>
-                        </div>
-                    </form>
+<body class="login-body">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-7 col-lg-5 col-xl-5">
+                <form asp-action="Registro">
+                    <div asp-validation-summary="ModelOnly" class="text-dander"> </div>
+                    <h1 class="text-warning text-center">REGISTRARSE</h1>
 
-                    </>
-                </div>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label"></label>
+                        <input type="text" asp-for="Nombre" placeholder="--Nombre--" class="form-control text-center fs-6" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input asp-for="Apellido" placeholder="--Apellido--" class="form-control text-center fs-6" />
+                        <span asp-validation-for="Apellido" class="text-danger"></span>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input asp-for="Alias" placeholder="--Alias--(Ej: MRB)" class="form-control text-center fs-6" />
+                        <span asp-validation-for="Alias" class="text-danger"></span>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input asp-for="Email" type="email" type="email" placeholder="--Ingrese su email--" class="form-control form-control-md text-center fs-6" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-outline mb-2 mt-2 text-center">
+                        <input asp-for="Contraseña" id="myInput" class="form-control text-center fs-6" placeholder="--Ingrese su clave--" />
+                        <button type="button" onclick="myFunction()" class="btn btn-secondary mt-1 mostrar " style="background:#3A3845;">
+                            <i class="fas fa-eye text-light"></i>
+                        </button>
+                        <span asp-validation-for="Contraseña" class="text-danger"></span>
+                    </div>
+                    <div class="d-grid gap-2 form-group">
+                        <button type="submit" class="btn btn-success btn-block fw-bold fs-6">Registrarse</button>
+                        <a class="btn btn-warning btn-block text-secondary fw-bold mt-1 fs-6" asp-action="login">Loguearme</a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
+</body>
 
-    @section Scripts{
-    <script src="script.js"></script>
+
+@section Scripts{
+<script src="script.js"></script>
     }
 
-    <script>
-              function myFunction() {
-          var x = document.getElementById("myInput");
-          if (x.type === "password") {
-            x.type = "text";
-          } else {
-            x.type = "password";
-          }
-        }
-    </script>
+<script>
+          function myFunction() {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+</script>
